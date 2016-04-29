@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DataBaseHelper extends SQLiteOpenHelper{
 
+    // ToDo: add an image as a blob and load it up into state activity!!!!!
+
     public static final String DATABASE_NAME = "States.db";
     public static final int DATABASE_VERSION = 1;
 
@@ -19,9 +21,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COL_STATE_ID = "_id";
     public static final String COL_STATE_NAME = "state_name";
     public static final String COL_TRUMP_SUPPORTER = "trump_support";
-    public static final String COL_IMG_NAME = "img";
+    public static final String COL_IMG = "img";
 
-    public static final String[] COL_NAMES = {COL_STATE_ID, COL_STATE_NAME, COL_TRUMP_SUPPORTER, COL_IMG_NAME};
+    public static final String[] COL_NAMES = {COL_STATE_ID, COL_STATE_NAME, COL_TRUMP_SUPPORTER, COL_IMG};
 
     private static final String CREATE_STATES_TABLE =
             "CREATE TABLE " + STATES_TABLE +
@@ -29,22 +31,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     COL_STATE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_STATE_NAME + " TEXT, " +
                     COL_TRUMP_SUPPORTER + " INTEGER, " +
-                    COL_IMG_NAME + " BLOB)";
+                    COL_IMG + " BLOB)";
 
     public static final String TRUMP_TABLE = "trump";
 
     public static final String COL_TRUMP_ID = "_id";
     public static final String COL_TRUMP_QUOTE = "trump_quote";
-    public static final String COL_TRUMP_IMG_NAME = "trump_img";
+    public static final String COL_TRUMP_IMG = "trump_img";
 
-    public static final String[] TRUMP_COL_NAMES = {COL_TRUMP_ID, COL_TRUMP_QUOTE, COL_TRUMP_IMG_NAME};
+    public static final String[] TRUMP_COL_NAMES = {COL_TRUMP_ID, COL_TRUMP_QUOTE, COL_TRUMP_IMG};
 
     private static final String CREATE_TRUMP_TABLE =
             "CREATE TABLE " + TRUMP_TABLE +
                     "(" +
                     COL_TRUMP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_TRUMP_QUOTE + " TEXT, " +
-                    COL_TRUMP_IMG_NAME + " BLOB)";
+                    COL_TRUMP_IMG + " BLOB)";
 
     private static DataBaseHelper instance;
 

@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByTrumpSupport();
-                // ToDo: fix this problem:
                 cursor.moveToPosition(i);
                 int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
                 Intent intent = new Intent(MainActivity.this, StateActivity.class);
