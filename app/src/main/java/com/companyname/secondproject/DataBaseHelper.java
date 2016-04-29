@@ -19,7 +19,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COL_STATE_ID = "_id";
     public static final String COL_STATE_NAME = "state_name";
     public static final String COL_TRUMP_SUPPORTER = "trump_support";
-    public static final String COL_IMG_NAME = "img_name";
+    public static final String COL_IMG_NAME = "img";
 
     public static final String[] COL_NAMES = {COL_STATE_ID, COL_STATE_NAME, COL_TRUMP_SUPPORTER, COL_IMG_NAME};
 
@@ -29,13 +29,13 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     COL_STATE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_STATE_NAME + " TEXT, " +
                     COL_TRUMP_SUPPORTER + " INTEGER, " +
-                    COL_IMG_NAME + " TEXT)";
+                    COL_IMG_NAME + " BLOB)";
 
     public static final String TRUMP_TABLE = "trump";
 
     public static final String COL_TRUMP_ID = "_id";
     public static final String COL_TRUMP_QUOTE = "trump_quote";
-    public static final String COL_TRUMP_IMG_NAME = "trump_img_name";
+    public static final String COL_TRUMP_IMG_NAME = "trump_img";
 
     public static final String[] TRUMP_COL_NAMES = {COL_TRUMP_ID, COL_TRUMP_QUOTE, COL_TRUMP_IMG_NAME};
 
@@ -44,7 +44,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     "(" +
                     COL_TRUMP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_TRUMP_QUOTE + " TEXT, " +
-                    COL_TRUMP_IMG_NAME + " TEXT)";
+                    COL_TRUMP_IMG_NAME + " BLOB)";
 
     private static DataBaseHelper instance;
 
