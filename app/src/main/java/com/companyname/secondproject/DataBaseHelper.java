@@ -302,13 +302,41 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
-    public Cursor searchStatesByTrumpSupport(String query){
-        // ToDo: figure out how to do this search:
+    public Cursor getListItemsFromList(String listName) {
         SQLiteDatabase db = this.getReadableDatabase();
+        //where clause:
+        String selections = "list_name = ?";
+
+        String[] selectionArgs = new String[] {
+                listName
+        };
+
         Cursor cursor = db.query(STATES_TABLE, // a. table
                 COL_NAMES, // b. column names
-                COL_STATE_NAME + " LIKE ?", // c. selections
-                new String[]{"%" + query + "%"}, // d. selections args
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
+    public Cursor searchStatesByTrumpSupport(){
+        // ToDo: figure out how to do this search:
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //where clause:
+        String selections = "trump_support = ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(1)
+        };
+
+        Cursor cursor = db.query(STATES_TABLE, // a. table
+                COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
                 null, // e. group by
                 null, // f. having
                 null, // g. order by

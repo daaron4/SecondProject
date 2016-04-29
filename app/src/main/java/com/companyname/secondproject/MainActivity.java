@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
             Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+            //Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByTrumpSupport();
             listView = (ListView)findViewById(R.id.list_view);
             if (cursorAdapter == null) {
                 cursorAdapter = new SimpleCursorAdapter(
