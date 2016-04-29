@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).getStates();
+        Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).getStateNames();
 
         TextView tv = (TextView) findViewById(R.id.tv);
         tv.setText("Number Of States In Database: " + cursor.getCount());
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
 
-            Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).searchStates(query);
+            Cursor cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
             listView = (ListView)findViewById(R.id.list_view);
             if (cursorAdapter == null) {
                 cursorAdapter = new SimpleCursorAdapter(
