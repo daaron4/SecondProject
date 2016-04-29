@@ -63,7 +63,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_STATES_TABLE);
         db.execSQL(CREATE_TRUMP_TABLE);
-        loadDataBase(db);
+        loadStatesTable(db);
+        loadTrumpTable(db);
     }
 
     @Override
@@ -73,7 +74,13 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    private void loadDataBase(SQLiteDatabase db) {
+    private void loadTrumpTable(SQLiteDatabase db) {
+        ContentValues values = new ContentValues();
+        values.put(COL_TRUMP_QUOTE, "I am donald trump, i suck.");
+        db.insert(TRUMP_TABLE, null, values);
+    }
+
+    private void loadStatesTable(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put(COL_STATE_NAME, "Alabama");
         values.put(COL_TRUMP_SUPPORTER, 1);
@@ -104,7 +111,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Delaware");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Florida");
@@ -276,7 +283,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
     }
 
-    public Cursor getStateNames(){
+    public Cursor getStateData(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(STATES_TABLE, // a. table
                 COL_NAMES, // b. column names
@@ -302,28 +309,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
-    public Cursor getListItemsFromList(String listName) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        //where clause:
-        String selections = "list_name = ?";
-
-        String[] selectionArgs = new String[] {
-                listName
-        };
-
-        Cursor cursor = db.query(STATES_TABLE, // a. table
-                COL_NAMES, // b. column names
-                selections, // c. selections
-                selectionArgs, // d. selections args
-                null, // e. group by
-                null, // f. having
-                null, // g. order by
-                null); // h. limit
-        return cursor;
-    }
-
     public Cursor searchStatesByTrumpSupport(){
-        // ToDo: figure out how to do this search:
         SQLiteDatabase db = this.getReadableDatabase();
 
         //where clause:
