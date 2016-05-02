@@ -92,8 +92,9 @@ public class StateActivity extends AppCompatActivity {
 
     private int getDrawableValue(String image){
         switch(image){
+            // ToDo: change back when ready
             case "state_alabama.png":
-                return R.drawable.state_alabama;
+                return R.drawable.test;
             case "state_alaska.png":
                 return R.drawable.state_alaska;
             case "state_arizona.png":
