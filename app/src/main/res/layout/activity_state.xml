@@ -10,15 +10,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.companyname.secondproject.StateActivity">
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <ImageView
         android:id="@+id/img_view"
         android:layout_width="wrap_content"
-        android:src="@drawable/test"
+        android:src="@drawable/state_california"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/trump_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info text here"/>
+
+    <TextView
+        android:id="@+id/quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="trump quote here"/>
 
 </LinearLayout>

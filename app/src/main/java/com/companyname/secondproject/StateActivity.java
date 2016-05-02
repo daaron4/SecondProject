@@ -8,6 +8,8 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class StateActivity extends AppCompatActivity {
 
     @Override
@@ -16,24 +18,47 @@ public class StateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_state);
 
         Intent intent = getIntent();
-        int id = intent.getIntExtra("id", 0);
+        int id = intent.getIntExtra("id", -1);
 
+        // creates image:
         Cursor cursor = DataBaseHelper.getInstance(StateActivity.this).getStateData();
         cursor.moveToPosition(id);
-        String display = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_STATE_NAME));
         String imgString = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME));
-
-
-        TextView textView = (TextView) findViewById(R.id.tv);
-        textView.setText("Name of state is: " + display);
-
         ImageView imageView = (ImageView) findViewById(R.id.img_view);
         imageView.setImageResource(getDrawableValue(imgString));
+        cursor.close();
+
+        // ToDo: make info text worked based on trump vote, and adjust everything else too
+        TextView textView2 = (TextView) findViewById(R.id.info);
+        textView2.setText("String not ready yet");
+
+        // HEY, MAKE SURE THAT THERE ARE THE SAME AMOUNT OF IMAGES AND QUOTES, AND THAT NONE ARE NULL FOR THIS LOGIC TO WORK!
+
+        // gets size of trump table:
+        int size = DataBaseHelper.getInstance(StateActivity.this).getTrumpTableSize();
+        // makes random number inside the size of the table:
+        Random random = new Random();
+        int randNum = random.nextInt(size) + 1;
+        // gets quote at that index
+        String quote = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
+        // displays quote
+        TextView textView = (TextView) findViewById(R.id.quote);
+        textView.setText("trump quote here: " + quote);
+
+
+        // same stuff for trump image:
+        randNum = random.nextInt(size) + 1;
+        String trumpImgString = DataBaseHelper.getInstance(StateActivity.this).getImagePathAtIndex(randNum);
+
+        ImageView trumpImg = (ImageView) findViewById(R.id.trump_img);
+        trumpImg.setImageResource(getDrawableValue(trumpImgString));
+
+
 
     }
 
-    private int getDrawableValue(String icon){
-        switch(icon){
+    private int getDrawableValue(String image){
+        switch(image){
             case "state_alabama.png":
                 return R.drawable.state_alabama;
             case "state_alaska.png":
@@ -134,6 +159,17 @@ public class StateActivity extends AppCompatActivity {
                 return R.drawable.state_wisconsin;
             case "state_wyoming.png":
                 return R.drawable.state_wyoming;
+            // ToDo: update when ready here:
+            case "trump_img_1.png":
+                return R.drawable.trump_img_1;
+            case "trump_img_2.png":
+                return R.drawable.trump_img_1;
+            case "trump_img_3.png":
+                return R.drawable.trump_img_1;
+            case "trump_img_4.png":
+                return R.drawable.trump_img_1;
+            case "trump_img_5.png":
+                return R.drawable.trump_img_1;
             default:
                 return 0;
         }

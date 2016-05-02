@@ -76,7 +76,24 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     private void loadTrumpTable(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
-        values.put(COL_TRUMP_QUOTE, "i am donald trump, i suck.");
+        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 1");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 2");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_2.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 3");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 4");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 5");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
         db.insert(TRUMP_TABLE, null, values);
     }
 
@@ -378,6 +395,72 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 null, // g. order by
                 null); // h. limit
         return cursor;
+    }
+
+    public String getTrumpQuoteAtIndex(int index) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //where clause:
+        String selections = "_id = ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(index)
+        };
+
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        cursor.moveToFirst();
+        String quote = cursor.getString(cursor.getColumnIndex(COL_TRUMP_QUOTE));
+        cursor.close();
+
+        return quote;
+    }
+
+    public String getImagePathAtIndex(int index) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //where clause:
+        String selections = "_id = ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(index)
+        };
+
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        cursor.moveToFirst();
+        String quote = cursor.getString(cursor.getColumnIndex(COL_TRUMP_IMG_NAME));
+        cursor.close();
+
+        return quote;
+    }
+
+    public int getTrumpTableSize() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                null, // c. selections
+                null, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        int size = cursor.getCount();
+        cursor.close();
+
+        return size;
     }
 
 }

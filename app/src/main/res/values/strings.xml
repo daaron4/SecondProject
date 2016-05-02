@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">SecondProject</string>
-    <string name="search">Something Else</string>
+    <string name="search">Search by state name</string>
+
+    <string name="trump_state">Something Else</string>
+    <string name="not_trump_state">Something Else</string>
+    <string name="no_vote_yet">Something Else</string>
+
 </resources>
