@@ -106,7 +106,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Alaska");
-        values.put(COL_TRUMP_SUPPORTER, 1);
+        values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_alaska.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -116,22 +116,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Arkansas");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_arkansas.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "California");
         values.put(COL_IMG_NAME, "state_california.png");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Colorado");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_colorado.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Connecticut");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_connecticut.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -141,17 +141,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Florida");
-        values.put(COL_TRUMP_SUPPORTER, 2);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_florida.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Georgia");
-        values.put(COL_TRUMP_SUPPORTER, 2);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_georgia.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Hawaii");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_hawaii.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -161,7 +161,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Illinois");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_illinois.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -171,7 +171,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Iowa");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_iowa.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -181,12 +181,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Kentucky");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_kentucky.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Louisiana");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_louisiana.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -196,17 +196,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Maryland");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_maryland.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Massachusetts");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_massachusetts.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Michigan");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_michigan.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -216,57 +216,57 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Mississippi");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_mississippi.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Missouri");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_missouri.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Montana");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_montana.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nebraska");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_nebraska.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nevada");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_nevada.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Hampshire");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_new_hampshire.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Jersey");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_new_jersey.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Mexico");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_new_mexico.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New York");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_new_york.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Carolina");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_north_carolina.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Dakota");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_north_dakota.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -281,37 +281,37 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Oregon");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_oregon.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Pennsylvania");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_pennsylvania.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Rhode Island");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_rhode_island.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Carolina");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_south_carolina.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Dakota");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_south_dakota.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Tennessee");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_tennessee.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Texas");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_texas.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -321,22 +321,22 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Vermont");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_vermont.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Virginia");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_virginia.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Washington");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_washington.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "West Virginia");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_west_virginia.png");
         db.insert(STATES_TABLE, null, values);
 
