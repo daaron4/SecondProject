@@ -76,23 +76,24 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     private void loadTrumpTable(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
-        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 1");
+        values.put(COL_TRUMP_QUOTE, "We can't continue to allow China to rape our country");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 2");
+        values.put(COL_TRUMP_QUOTE, "Donald J. Trump is calling for a total and complete shutdown of Muslims entering the " +
+                "United States until our country's representatives can figure out what is going on");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_2.png");
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 3");
+        values.put(COL_TRUMP_QUOTE, "Look at that face! Would anyone vote for that? Can you imagine that, the face of our next president?");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 4");
+        values.put(COL_TRUMP_QUOTE, "You could see there was blood coming out of her eyes. Blood coming out of her… wherever");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "i am trump sux quote 5");
+        values.put(COL_TRUMP_QUOTE, "He’s not a war hero. He’s a war hero because he was captured. I like people who weren’t captured");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
         db.insert(TRUMP_TABLE, null, values);
     }

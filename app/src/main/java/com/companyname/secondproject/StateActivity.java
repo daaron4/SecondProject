@@ -72,7 +72,7 @@ public class StateActivity extends AppCompatActivity {
         String quoteString = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
         // displays quote
         quote = (TextView) findViewById(R.id.quote);
-        quote.setText("trump quote here: " + quoteString);
+        quote.setText("\"" + quoteString + "\"");
 
         // same stuff for trump image:
         randNum = random.nextInt(size) + 1;
@@ -92,9 +92,8 @@ public class StateActivity extends AppCompatActivity {
 
     private int getDrawableValue(String image){
         switch(image){
-            // ToDo: change back when ready
             case "state_alabama.png":
-                return R.drawable.test;
+                return R.drawable.state_alabama;
             case "state_alaska.png":
                 return R.drawable.state_alaska;
             case "state_arizona.png":
@@ -193,17 +192,17 @@ public class StateActivity extends AppCompatActivity {
                 return R.drawable.state_wisconsin;
             case "state_wyoming.png":
                 return R.drawable.state_wyoming;
-            // ToDo: update when ready here:
+            // ToDo: add more when ready
             case "trump_img_1.png":
                 return R.drawable.trump_img_1;
             case "trump_img_2.png":
-                return R.drawable.trump_img_1;
+                return R.drawable.trump_img_2;
             case "trump_img_3.png":
-                return R.drawable.trump_img_1;
+                return R.drawable.trump_img_3;
             case "trump_img_4.png":
-                return R.drawable.trump_img_1;
+                return R.drawable.trump_img_4;
             case "trump_img_5.png":
-                return R.drawable.trump_img_1;
+                return R.drawable.trump_img_5;
             default:
                 return 0;
         }
