@@ -12,6 +12,11 @@ import java.util.Random;
 
 public class StateActivity extends AppCompatActivity {
 
+    private ImageView stateImageView;
+    private ImageView trumpImageView;
+    private TextView quote;
+    private TextView info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,17 +25,41 @@ public class StateActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", -1);
 
-        // creates image:
+        // creates state image:
         Cursor cursor = DataBaseHelper.getInstance(StateActivity.this).getStateData();
         cursor.moveToPosition(id);
         String imgString = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME));
-        ImageView imageView = (ImageView) findViewById(R.id.img_view);
-        imageView.setImageResource(getDrawableValue(imgString));
+        stateImageView = (ImageView) findViewById(R.id.img_view);
+        stateImageView.setImageResource(getDrawableValue(imgString));
         cursor.close();
 
-        // ToDo: make info text worked based on trump vote, and adjust everything else too
-        TextView textView2 = (TextView) findViewById(R.id.info);
-        textView2.setText("String not ready yet");
+        int votingStatus = DataBaseHelper.getInstance(StateActivity.this).getStateVotingStatusAtIndex(id + 1);
+        // didn't vote for trump
+        if (votingStatus == 0) {
+            layoutGoodState();
+        }
+        // voted for trump
+        else if (votingStatus == 1) {
+            layoutBadState();
+        }
+        // hasn't voted yet
+        else {
+            layoutNeutralState();
+        }
+
+    }
+
+    private void layoutGoodState() {
+        info = (TextView) findViewById(R.id.info);
+        info.setText(R.string.not_trump_state);
+
+        quote = (TextView) findViewById(R.id.quote);
+        quote.setText("No trump quote needed");
+    }
+
+    private void layoutBadState() {
+        info = (TextView) findViewById(R.id.info);
+        info.setText(R.string.trump_state);
 
         // HEY, MAKE SURE THAT THERE ARE THE SAME AMOUNT OF IMAGES AND QUOTES, AND THAT NONE ARE NULL FOR THIS LOGIC TO WORK!
 
@@ -40,21 +69,25 @@ public class StateActivity extends AppCompatActivity {
         Random random = new Random();
         int randNum = random.nextInt(size) + 1;
         // gets quote at that index
-        String quote = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
+        String quoteString = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
         // displays quote
-        TextView textView = (TextView) findViewById(R.id.quote);
-        textView.setText("trump quote here: " + quote);
-
+        quote = (TextView) findViewById(R.id.quote);
+        quote.setText("trump quote here: " + quoteString);
 
         // same stuff for trump image:
         randNum = random.nextInt(size) + 1;
         String trumpImgString = DataBaseHelper.getInstance(StateActivity.this).getImagePathAtIndex(randNum);
 
-        ImageView trumpImg = (ImageView) findViewById(R.id.trump_img);
-        trumpImg.setImageResource(getDrawableValue(trumpImgString));
+        trumpImageView = (ImageView) findViewById(R.id.trump_img);
+        trumpImageView.setImageResource(getDrawableValue(trumpImgString));
+    }
 
+    private void layoutNeutralState() {
+        info = (TextView) findViewById(R.id.info);
+        info.setText(R.string.no_vote_yet);
 
-
+        quote = (TextView) findViewById(R.id.quote);
+        quote.setText("No trump quote needed");
     }
 
     private int getDrawableValue(String image){

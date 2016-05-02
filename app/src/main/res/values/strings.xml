@@ -2,8 +2,8 @@
     <string name="app_name">SecondProject</string>
     <string name="search">Search by state name</string>
 
-    <string name="trump_state">Something Else</string>
-    <string name="not_trump_state">Something Else</string>
-    <string name="no_vote_yet">Something Else</string>
+    <string name="trump_state">Booooo, Republicans in this state voted for trump.... </string>
+    <string name="not_trump_state">Republicans in this state did not vote for trump</string>
+    <string name="no_vote_yet">Republicans have not voted in this state yet</string>
 
 </resources>

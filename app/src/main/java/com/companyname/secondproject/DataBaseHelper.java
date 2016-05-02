@@ -140,12 +140,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Florida");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_florida.png");
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Georgia");
-        values.put(COL_TRUMP_SUPPORTER, 0);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_georgia.png");
         db.insert(STATES_TABLE, null, values);
 
@@ -395,6 +395,31 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 null, // g. order by
                 null); // h. limit
         return cursor;
+    }
+
+    public int getStateVotingStatusAtIndex(int index) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //where clause:
+        String selections = "_id = ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(index)
+        };
+
+        Cursor cursor = db.query(STATES_TABLE, // a. table
+                COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        cursor.moveToFirst();
+        int status = cursor.getInt(cursor.getColumnIndex(COL_TRUMP_SUPPORTER));
+        cursor.close();
+
+        return status;
     }
 
     public String getTrumpQuoteAtIndex(int index) {
