@@ -203,6 +203,16 @@ public class StateActivity extends AppCompatActivity {
                 return R.drawable.trump_img_4;
             case "trump_img_5.png":
                 return R.drawable.trump_img_5;
+            case "trump_img_6.png":
+                return R.drawable.trump_img_6;
+            case "trump_img_7.png":
+                return R.drawable.trump_img_7;
+            case "trump_img_8.png":
+                return R.drawable.trump_img_8;
+            case "trump_img_9.png":
+                return R.drawable.trump_img_9;
+            case "trump_img_10.png":
+                return R.drawable.trump_img_10;
             default:
                 return 0;
         }

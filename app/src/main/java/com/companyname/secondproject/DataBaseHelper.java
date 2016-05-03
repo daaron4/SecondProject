@@ -103,6 +103,28 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_TRUMP_QUOTE, "He’s not a war hero. He’s a war hero because he was captured. I like people who weren’t captured");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
         db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "I have a great relationship with the Mexican people.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_6.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "I actually don't have a bad hairline.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_7.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Because I was down there and I watched our police and our firemen down at 7/11, " +
+                "down at the World Trade Center right after it came down. And I saw the greatest people I've ever seen in action.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_8.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "You know, it doesn't really matter what [the media] write as long as you've got a young and beautiful piece of ass.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_9.png");
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "All of the women on 'The Apprentice' flirted with me — consciously or unconsciously. That’s to be expected.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_10.png");
+        db.insert(TRUMP_TABLE, null, values);
+
     }
 
     private void loadStatesTable(SQLiteDatabase db) {
