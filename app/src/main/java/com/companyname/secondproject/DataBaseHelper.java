@@ -34,8 +34,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     COL_STATE_NAME + " TEXT, " +
                     COL_TRUMP_SUPPORTER + " INTEGER, " +
                     COL_IMG_NAME + " TEXT, " +
-                    COL_POPULATION + " INTEGER, " +
-                    COL_TRUMP_VOTES + " INTEGER, " +
+                    COL_POPULATION + " REAL, " +
+                    COL_TRUMP_VOTES + " REAL, " +
                     COL_DENSITY + " REAL)";
 
     public static final String TRUMP_TABLE = "trump";
@@ -112,6 +112,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_alabama.png");
         values.put(COL_POPULATION, 4822023);
         values.put(COL_TRUMP_VOTES, 317735);
+        float density = 4822023f / 317735f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Alaska");
@@ -119,6 +121,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_alaska.png");
         values.put(COL_POPULATION, 731449);
         values.put(COL_TRUMP_VOTES, 7346);
+        density = 731449f / 7346f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Arizona");
@@ -126,6 +130,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_arizona.png");
         values.put(COL_POPULATION, 6553255);
         values.put(COL_TRUMP_VOTES, 249916);
+        density = 6553255f / 249916f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Arkansas");
@@ -133,14 +139,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_arkansas.png");
         values.put(COL_POPULATION, 2949131);
         values.put(COL_TRUMP_VOTES, 133144);
+        density = 2949131f / 133144f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
-        // ToDo: do something with zeros:
         values.put(COL_STATE_NAME, "California");
         values.put(COL_IMG_NAME, "state_california.png");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_POPULATION, 38041430);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Colorado");
@@ -148,6 +157,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_colorado.png");
         values.put(COL_POPULATION, 5187582);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Connecticut");
@@ -155,6 +166,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_connecticut.png");
         values.put(COL_POPULATION, 3590347);
         values.put(COL_TRUMP_VOTES, 123367);
+        density = 3590347f / 123367f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Delaware");
@@ -162,6 +175,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_delaware.png");
         values.put(COL_POPULATION, 917092);
         values.put(COL_TRUMP_VOTES, 42472);
+        density = 917092f / 42472f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Florida");
@@ -169,6 +184,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_florida.png");
         values.put(COL_POPULATION, 19317568);
         values.put(COL_TRUMP_VOTES, 1077221);
+        density = 19317568f / 1077221f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Georgia");
@@ -176,6 +193,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_georgia.png");
         values.put(COL_POPULATION, 9919945);
         values.put(COL_TRUMP_VOTES, 501707);
+        density = 9919945f / 501707f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Hawaii");
@@ -183,6 +202,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_hawaii.png");
         values.put(COL_POPULATION, 1392313);
         values.put(COL_TRUMP_VOTES, 6805);
+        density = 1392313f / 6805f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Idaho");
@@ -190,6 +211,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_idaho.png");
         values.put(COL_POPULATION, 1595728);
         values.put(COL_TRUMP_VOTES, 62478);
+        density = 1595728f / 62478f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Illinois");
@@ -197,6 +220,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_illinois.png");
         values.put(COL_POPULATION, 12875255);
         values.put(COL_TRUMP_VOTES, 556916);
+        density = 12875255f / 556916f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Indiana");
@@ -204,6 +229,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_indiana.png");
         values.put(COL_POPULATION, 6537334);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Iowa");
@@ -211,6 +238,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_iowa.png");
         values.put(COL_POPULATION, 3074186);
         values.put(COL_TRUMP_VOTES, 45427);
+        density = 3074186f / 45427f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Kansas");
@@ -218,6 +247,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_kansas.png");
         values.put(COL_POPULATION, 2885905);
         values.put(COL_TRUMP_VOTES, 17062);
+        density = 2885905f / 17062f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Kentucky");
@@ -225,12 +256,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_kentucky.png");
         values.put(COL_POPULATION, 4380415);
         values.put(COL_TRUMP_VOTES, 82493);
+        density = 4380415f / 82493f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Louisiana");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_louisiana.png");
         values.put(COL_POPULATION, 4601893);
+        values.put(COL_TRUMP_VOTES, 124818);
+        density = 4601893f / 124818f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Maine");
@@ -238,6 +274,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_maine.png");
         values.put(COL_POPULATION, 1329192);
         values.put(COL_TRUMP_VOTES, 124818);
+        density = 1329192f / 124818f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Maryland");
@@ -245,6 +283,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_maryland.png");
         values.put(COL_POPULATION, 5884563);
         values.put(COL_TRUMP_VOTES, 236623);
+        density = 5884563f / 236623f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Massachusetts");
@@ -252,6 +292,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_massachusetts.png");
         values.put(COL_POPULATION, 6646144);
         values.put(COL_TRUMP_VOTES, 311313);
+        density = 6646144f / 311313f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Michigan");
@@ -259,6 +301,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_michigan.png");
         values.put(COL_POPULATION, 9883360);
         values.put(COL_TRUMP_VOTES, 483751);
+        density = 9883360f / 483751f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Minnesota");
@@ -266,6 +310,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_minnesota.png");
         values.put(COL_POPULATION, 5379139);
         values.put(COL_TRUMP_VOTES, 24018);
+        density = 5379139f / 24018f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Mississippi");
@@ -273,6 +319,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_mississippi.png");
         values.put(COL_POPULATION, 2984926);
         values.put(COL_TRUMP_VOTES, 191755);
+        density = 2984926f / 191755f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Missouri");
@@ -280,6 +328,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_missouri.png");
         values.put(COL_POPULATION, 6021988);
         values.put(COL_TRUMP_VOTES, 382093);
+        density = 6021988f / 382093f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Montana");
@@ -287,6 +337,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_montana.png");
         values.put(COL_POPULATION, 1005141);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nebraska");
@@ -294,6 +346,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_nebraska.png");
         values.put(COL_POPULATION, 1855525);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nevada");
@@ -301,6 +355,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_nevada.png");
         values.put(COL_POPULATION, 2758931);
         values.put(COL_TRUMP_VOTES, 34531);
+        density = 2758931f / 34531f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Hampshire");
@@ -308,6 +364,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_new_hampshire.png");
         values.put(COL_POPULATION, 1320718);
         values.put(COL_TRUMP_VOTES, 100406);
+        density = 1320718f / 100406f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Jersey");
@@ -315,6 +373,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_new_jersey.png");
         values.put(COL_POPULATION, 8864590);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Mexico");
@@ -322,6 +382,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_new_mexico.png");
         values.put(COL_POPULATION, 2085538);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New York");
@@ -329,6 +391,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_new_york.png");
         values.put(COL_POPULATION, 19570261);
         values.put(COL_TRUMP_VOTES, 524932);
+        density = 19570261f / 524932f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Carolina");
@@ -336,6 +400,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_north_carolina.png");
         values.put(COL_POPULATION, 9752073);
         values.put(COL_TRUMP_VOTES, 458151);
+        density = 9752073f / 458151f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Dakota");
@@ -343,6 +409,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_north_dakota.png");
         values.put(COL_POPULATION, 699628);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Ohio");
@@ -350,6 +418,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_ohio.png");
         values.put(COL_POPULATION, 11544225);
         values.put(COL_TRUMP_VOTES, 727585);
+        density = 11544225f / 727585f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Oklahoma");
@@ -357,6 +427,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_oklahoma.png");
         values.put(COL_POPULATION, 3814820);
         values.put(COL_TRUMP_VOTES, 130141);
+        density = 3814820f / 130141f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Oregon");
@@ -364,6 +436,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_oregon.png");
         values.put(COL_POPULATION, 3899353);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Pennsylvania");
@@ -371,6 +445,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_pennsylvania.png");
         values.put(COL_POPULATION, 12763536);
         values.put(COL_TRUMP_VOTES, 892702);
+        density = 12763536f / 892702f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Rhode Island");
@@ -378,6 +454,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_rhode_island.png");
         values.put(COL_POPULATION, 1050292);
         values.put(COL_TRUMP_VOTES, 39059);
+        density = 1050292f / 39059f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Carolina");
@@ -385,6 +463,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_south_carolina.png");
         values.put(COL_POPULATION, 4723723);
         values.put(COL_TRUMP_VOTES, 239851);
+        density = 4723723f / 239851f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Dakota");
@@ -392,6 +472,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_south_dakota.png");
         values.put(COL_POPULATION, 833354);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Tennessee");
@@ -399,6 +481,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_tennessee.png");
         values.put(COL_POPULATION, 6456243);
         values.put(COL_TRUMP_VOTES, 332702);
+        density = 6456243f / 332702f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Texas");
@@ -406,6 +490,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_texas.png");
         values.put(COL_POPULATION, 26059203);
         values.put(COL_TRUMP_VOTES, 757618);
+        density = 26059203f / 757618f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Utah");
@@ -413,6 +499,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_utah.png");
         values.put(COL_POPULATION, 2855287);
         values.put(COL_TRUMP_VOTES, 24864);
+        density = 2855287f / 24864f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Vermont");
@@ -420,6 +508,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_vermont.png");
         values.put(COL_POPULATION, 626011);
         values.put(COL_TRUMP_VOTES, 19968);
+        density = 626011f / 19968f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Virginia");
@@ -427,6 +517,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_virginia.png");
         values.put(COL_POPULATION, 8185867);
         values.put(COL_TRUMP_VOTES, 355960);
+        density = 8185867f / 355960f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Washington");
@@ -434,6 +526,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_washington.png");
         values.put(COL_POPULATION, 6897012);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "West Virginia");
@@ -441,6 +535,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_west_virginia.png");
         values.put(COL_POPULATION, 1855413);
         values.put(COL_TRUMP_VOTES, 0);
+        density = 0f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Wisconsin");
@@ -448,6 +544,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_wisconsin.png");
         values.put(COL_POPULATION, 5726398);
         values.put(COL_TRUMP_VOTES, 386370);
+        density = 5726398f / 386370f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Wyoming");
@@ -455,6 +553,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_IMG_NAME, "state_wyoming.png");
         values.put(COL_POPULATION, 576412);
         values.put(COL_TRUMP_VOTES, 70);
+        density = 576412f / 70f;
+        values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
     }
 
