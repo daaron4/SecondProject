@@ -90,7 +90,7 @@ public class StateActivity extends AppCompatActivity {
         quote.setText("No trump quote needed");
     }
 
-    private int getDrawableValue(String image){
+    public static int getDrawableValue(String image){
         switch(image){
             case "state_alabama.png":
                 return R.drawable.state_alabama;

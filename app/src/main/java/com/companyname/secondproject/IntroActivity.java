@@ -24,7 +24,8 @@ public class IntroActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickedTbd(View view) {
-        Toast.makeText(IntroActivity.this, "TBD dude", Toast.LENGTH_LONG).show();
+    public void clickedAssholeSearch(View view) {
+        Intent intent = new Intent(IntroActivity.this, DensityActivity.class);
+        startActivity(intent);
     }
 }

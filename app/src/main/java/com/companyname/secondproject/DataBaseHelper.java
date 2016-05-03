@@ -571,6 +571,19 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public Cursor getDensityData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(STATES_TABLE, // a. table
+                COL_NAMES, // b. column names
+                null, // c. selections
+                null, // d. selections args
+                null, // e. group by
+                null, // f. having
+                COL_DENSITY + " DESC ", // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
     public Cursor searchStatesByName(String query){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(STATES_TABLE, // a. table

@@ -30,15 +30,15 @@
         android:onClick="clickedFilterByTrumpSupport"
         android:layout_weight="1"/>
     <TextView
-        android:id="@+id/tbd"
-        android:text="TBD"
+        android:id="@+id/asshole_search"
+        android:text="Filter by asshole density"
         android:layout_width="match_parent"
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="center"
         android:layout_height="0dp"
         android:background="#008000"
-        android:onClick="clickedTbd"
+        android:onClick="clickedAssholeSearch"
         android:layout_weight="1"/>
 
 </LinearLayout>
