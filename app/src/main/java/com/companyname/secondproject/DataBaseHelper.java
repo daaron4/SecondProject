@@ -20,12 +20,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COL_STATE_NAME = "state_name";
     public static final String COL_TRUMP_SUPPORTER = "trump_support";
     public static final String COL_IMG_NAME = "img_name";
-    public static final String COL_POPULATION = "population";
+    public static final String COL_SQUARE_MILES = "square_miles";
     public static final String COL_TRUMP_VOTES = "trump_votes";
     public static final String COL_DENSITY = "density";
 
     public static final String[] COL_NAMES = {COL_STATE_ID, COL_STATE_NAME, COL_TRUMP_SUPPORTER,
-            COL_IMG_NAME, COL_POPULATION, COL_TRUMP_VOTES, COL_DENSITY};
+            COL_IMG_NAME, COL_SQUARE_MILES, COL_TRUMP_VOTES, COL_DENSITY};
 
     private static final String CREATE_STATES_TABLE =
             "CREATE TABLE " + STATES_TABLE +
@@ -34,7 +34,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                     COL_STATE_NAME + " TEXT, " +
                     COL_TRUMP_SUPPORTER + " INTEGER, " +
                     COL_IMG_NAME + " TEXT, " +
-                    COL_POPULATION + " REAL, " +
+                    COL_SQUARE_MILES + " REAL, " +
                     COL_TRUMP_VOTES + " REAL, " +
                     COL_DENSITY + " REAL)";
 
@@ -110,450 +110,450 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_STATE_NAME, "Alabama");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_alabama.png");
-        values.put(COL_POPULATION, 4822023);
+        values.put(COL_SQUARE_MILES, 50744);
         values.put(COL_TRUMP_VOTES, 317735);
-        float density = 4822023f / 317735f;
+        float density = 317735f / 50744f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Alaska");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_alaska.png");
-        values.put(COL_POPULATION, 731449);
+        values.put(COL_SQUARE_MILES, 571951);
         values.put(COL_TRUMP_VOTES, 7346);
-        density = 731449f / 7346f;
+        density = 7346f / 571951f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Arizona");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_arizona.png");
-        values.put(COL_POPULATION, 6553255);
+        values.put(COL_SQUARE_MILES, 113635);
         values.put(COL_TRUMP_VOTES, 249916);
-        density = 6553255f / 249916f;
+        density = 249916f / 113635f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Arkansas");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_arkansas.png");
-        values.put(COL_POPULATION, 2949131);
+        values.put(COL_SQUARE_MILES, 52068);
         values.put(COL_TRUMP_VOTES, 133144);
-        density = 2949131f / 133144f;
+        density = 133144f / 52068f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "California");
         values.put(COL_IMG_NAME, "state_california.png");
         values.put(COL_TRUMP_SUPPORTER, 2);
-        values.put(COL_POPULATION, 38041430);
+        values.put(COL_SQUARE_MILES, 155959);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 155959f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Colorado");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_colorado.png");
-        values.put(COL_POPULATION, 5187582);
+        values.put(COL_SQUARE_MILES, 103718);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 103718f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Connecticut");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_connecticut.png");
-        values.put(COL_POPULATION, 3590347);
+        values.put(COL_SQUARE_MILES, 4845);
         values.put(COL_TRUMP_VOTES, 123367);
-        density = 3590347f / 123367f;
+        density = 123367f / 4845f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Delaware");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_delaware.png");
-        values.put(COL_POPULATION, 917092);
+        values.put(COL_SQUARE_MILES, 1954);
         values.put(COL_TRUMP_VOTES, 42472);
-        density = 917092f / 42472f;
+        density = 42472f / 1954f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Florida");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_florida.png");
-        values.put(COL_POPULATION, 19317568);
+        values.put(COL_SQUARE_MILES, 53927);
         values.put(COL_TRUMP_VOTES, 1077221);
-        density = 19317568f / 1077221f;
+        density = 1077221f / 53927f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Georgia");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_georgia.png");
-        values.put(COL_POPULATION, 9919945);
+        values.put(COL_SQUARE_MILES, 57906);
         values.put(COL_TRUMP_VOTES, 501707);
-        density = 9919945f / 501707f;
+        density = 501707f / 57906f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Hawaii");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_hawaii.png");
-        values.put(COL_POPULATION, 1392313);
+        values.put(COL_SQUARE_MILES, 6423);
         values.put(COL_TRUMP_VOTES, 6805);
-        density = 1392313f / 6805f;
+        density = 6805f / 6423f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Idaho");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_idaho.png");
-        values.put(COL_POPULATION, 1595728);
+        values.put(COL_SQUARE_MILES, 82747);
         values.put(COL_TRUMP_VOTES, 62478);
-        density = 1595728f / 62478f;
+        density = 62478f / 82747f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Illinois");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_illinois.png");
-        values.put(COL_POPULATION, 12875255);
+        values.put(COL_SQUARE_MILES, 55584);
         values.put(COL_TRUMP_VOTES, 556916);
-        density = 12875255f / 556916f;
+        density = 556916f / 55584f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Indiana");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_indiana.png");
-        values.put(COL_POPULATION, 6537334);
+        values.put(COL_SQUARE_MILES, 35867);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 35867f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Iowa");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_iowa.png");
-        values.put(COL_POPULATION, 3074186);
+        values.put(COL_SQUARE_MILES, 55869);
         values.put(COL_TRUMP_VOTES, 45427);
-        density = 3074186f / 45427f;
+        density = 45427f / 55869f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Kansas");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_kansas.png");
-        values.put(COL_POPULATION, 2885905);
+        values.put(COL_SQUARE_MILES, 81815);
         values.put(COL_TRUMP_VOTES, 17062);
-        density = 2885905f / 17062f;
+        density = 17062f / 81815f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Kentucky");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_kentucky.png");
-        values.put(COL_POPULATION, 4380415);
+        values.put(COL_SQUARE_MILES, 39728);
         values.put(COL_TRUMP_VOTES, 82493);
-        density = 4380415f / 82493f;
+        density = 82493f / 39728f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Louisiana");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_louisiana.png");
-        values.put(COL_POPULATION, 4601893);
+        values.put(COL_SQUARE_MILES, 43562);
         values.put(COL_TRUMP_VOTES, 124818);
-        density = 4601893f / 124818f;
+        density = 124818f / 43562f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Maine");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_maine.png");
-        values.put(COL_POPULATION, 1329192);
+        values.put(COL_SQUARE_MILES, 30862);
         values.put(COL_TRUMP_VOTES, 124818);
-        density = 1329192f / 124818f;
+        density = 124818f / 30862f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Maryland");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_maryland.png");
-        values.put(COL_POPULATION, 5884563);
+        values.put(COL_SQUARE_MILES, 9774);
         values.put(COL_TRUMP_VOTES, 236623);
-        density = 5884563f / 236623f;
+        density = 236623f / 9774f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Massachusetts");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_massachusetts.png");
-        values.put(COL_POPULATION, 6646144);
+        values.put(COL_SQUARE_MILES, 7840);
         values.put(COL_TRUMP_VOTES, 311313);
-        density = 6646144f / 311313f;
+        density = 311313f / 7840f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Michigan");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_michigan.png");
-        values.put(COL_POPULATION, 9883360);
+        values.put(COL_SQUARE_MILES, 56804);
         values.put(COL_TRUMP_VOTES, 483751);
-        density = 9883360f / 483751f;
+        density = 483751f / 56804f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Minnesota");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_minnesota.png");
-        values.put(COL_POPULATION, 5379139);
+        values.put(COL_SQUARE_MILES, 79610);
         values.put(COL_TRUMP_VOTES, 24018);
-        density = 5379139f / 24018f;
+        density = 24018f / 79610f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Mississippi");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_mississippi.png");
-        values.put(COL_POPULATION, 2984926);
+        values.put(COL_SQUARE_MILES, 46907);
         values.put(COL_TRUMP_VOTES, 191755);
-        density = 2984926f / 191755f;
+        density = 191755f / 46907f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Missouri");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_missouri.png");
-        values.put(COL_POPULATION, 6021988);
+        values.put(COL_SQUARE_MILES, 68886);
         values.put(COL_TRUMP_VOTES, 382093);
-        density = 6021988f / 382093f;
+        density = 382093f / 68886f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Montana");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_montana.png");
-        values.put(COL_POPULATION, 1005141);
+        values.put(COL_SQUARE_MILES, 145552);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 145552f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nebraska");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_nebraska.png");
-        values.put(COL_POPULATION, 1855525);
+        values.put(COL_SQUARE_MILES, 76872);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 76872f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Nevada");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_nevada.png");
-        values.put(COL_POPULATION, 2758931);
+        values.put(COL_SQUARE_MILES, 109826);
         values.put(COL_TRUMP_VOTES, 34531);
-        density = 2758931f / 34531f;
+        density = 34531f / 109826f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Hampshire");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_new_hampshire.png");
-        values.put(COL_POPULATION, 1320718);
+        values.put(COL_SQUARE_MILES, 8968);
         values.put(COL_TRUMP_VOTES, 100406);
-        density = 1320718f / 100406f;
+        density = 100406f / 8968f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Jersey");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_new_jersey.png");
-        values.put(COL_POPULATION, 8864590);
+        values.put(COL_SQUARE_MILES, 7417);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 7417f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New Mexico");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_new_mexico.png");
-        values.put(COL_POPULATION, 2085538);
+        values.put(COL_SQUARE_MILES, 121356);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 121356f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "New York");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_new_york.png");
-        values.put(COL_POPULATION, 19570261);
+        values.put(COL_SQUARE_MILES, 47214);
         values.put(COL_TRUMP_VOTES, 524932);
-        density = 19570261f / 524932f;
+        density = 524932f / 47214f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Carolina");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_north_carolina.png");
-        values.put(COL_POPULATION, 9752073);
+        values.put(COL_SQUARE_MILES, 48711);
         values.put(COL_TRUMP_VOTES, 458151);
-        density = 9752073f / 458151f;
+        density = 458151f / 48711f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "North Dakota");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_north_dakota.png");
-        values.put(COL_POPULATION, 699628);
+        values.put(COL_SQUARE_MILES, 68976);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 68976f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Ohio");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_ohio.png");
-        values.put(COL_POPULATION, 11544225);
+        values.put(COL_SQUARE_MILES, 40948);
         values.put(COL_TRUMP_VOTES, 727585);
-        density = 11544225f / 727585f;
+        density = 727585f / 40948f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Oklahoma");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_oklahoma.png");
-        values.put(COL_POPULATION, 3814820);
+        values.put(COL_SQUARE_MILES, 68667);
         values.put(COL_TRUMP_VOTES, 130141);
-        density = 3814820f / 130141f;
+        density = 130141f / 68667f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Oregon");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_oregon.png");
-        values.put(COL_POPULATION, 3899353);
+        values.put(COL_SQUARE_MILES, 95997);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 95997f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Pennsylvania");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_pennsylvania.png");
-        values.put(COL_POPULATION, 12763536);
+        values.put(COL_SQUARE_MILES, 44817);
         values.put(COL_TRUMP_VOTES, 892702);
-        density = 12763536f / 892702f;
+        density = 892702f / 44817f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Rhode Island");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_rhode_island.png");
-        values.put(COL_POPULATION, 1050292);
+        values.put(COL_SQUARE_MILES, 1045);
         values.put(COL_TRUMP_VOTES, 39059);
-        density = 1050292f / 39059f;
+        density = 39059f / 1045f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Carolina");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_south_carolina.png");
-        values.put(COL_POPULATION, 4723723);
+        values.put(COL_SQUARE_MILES, 30110);
         values.put(COL_TRUMP_VOTES, 239851);
-        density = 4723723f / 239851f;
+        density = 239851f / 30110f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "South Dakota");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_south_dakota.png");
-        values.put(COL_POPULATION, 833354);
+        values.put(COL_SQUARE_MILES, 75885);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 75885;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Tennessee");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_tennessee.png");
-        values.put(COL_POPULATION, 6456243);
+        values.put(COL_SQUARE_MILES, 41217);
         values.put(COL_TRUMP_VOTES, 332702);
-        density = 6456243f / 332702f;
+        density = 332702f / 41217f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Texas");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_texas.png");
-        values.put(COL_POPULATION, 26059203);
+        values.put(COL_SQUARE_MILES, 261797);
         values.put(COL_TRUMP_VOTES, 757618);
-        density = 26059203f / 757618f;
+        density = 757618f / 261797f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Utah");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_utah.png");
-        values.put(COL_POPULATION, 2855287);
+        values.put(COL_SQUARE_MILES, 82144);
         values.put(COL_TRUMP_VOTES, 24864);
-        density = 2855287f / 24864f;
+        density = 24864f / 82144f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Vermont");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_vermont.png");
-        values.put(COL_POPULATION, 626011);
+        values.put(COL_SQUARE_MILES, 9250);
         values.put(COL_TRUMP_VOTES, 19968);
-        density = 626011f / 19968f;
+        density = 19968f / 9250f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Virginia");
         values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_virginia.png");
-        values.put(COL_POPULATION, 8185867);
+        values.put(COL_SQUARE_MILES, 39594);
         values.put(COL_TRUMP_VOTES, 355960);
-        density = 8185867f / 355960f;
+        density = 355960f / 39594f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Washington");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_washington.png");
-        values.put(COL_POPULATION, 6897012);
+        values.put(COL_SQUARE_MILES, 66544);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 66544f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "West Virginia");
         values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_west_virginia.png");
-        values.put(COL_POPULATION, 1855413);
+        values.put(COL_SQUARE_MILES, 24078);
         values.put(COL_TRUMP_VOTES, 0);
-        density = 0f;
+        density = 0f / 24078f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Wisconsin");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_wisconsin.png");
-        values.put(COL_POPULATION, 5726398);
+        values.put(COL_SQUARE_MILES, 54310);
         values.put(COL_TRUMP_VOTES, 386370);
-        density = 5726398f / 386370f;
+        density = 386370f / 54310f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Wyoming");
         values.put(COL_TRUMP_SUPPORTER, 0);
         values.put(COL_IMG_NAME, "state_wyoming.png");
-        values.put(COL_POPULATION, 576412);
+        values.put(COL_SQUARE_MILES, 97100);
         values.put(COL_TRUMP_VOTES, 70);
-        density = 576412f / 70f;
+        density = 70f / 97100f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
     }
