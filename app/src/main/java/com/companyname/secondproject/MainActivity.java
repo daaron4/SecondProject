@@ -63,27 +63,6 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    public void clickedFilter(View view) {
-        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByTrumpSupport();
-        listView = (ListView)findViewById(R.id.list_view);
-        if (cursorAdapter == null) {
-            cursorAdapter = new SimpleCursorAdapter(
-                    MainActivity.this,
-                    android.R.layout.simple_list_item_1,
-                    cursor,
-                    new String[]{DataBaseHelper.COL_STATE_NAME},
-                    new int[]{android.R.id.text1},
-                    0);
-            listView.setAdapter(cursorAdapter);
-        }
-        else {
-            cursorAdapter.swapCursor(cursor);
-        }
-
-        listView.setOnItemClickListener(itemClick);
-
-    }
-
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             final String query = intent.getStringExtra(SearchManager.QUERY);

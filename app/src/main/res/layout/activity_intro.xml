@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    tools:context="com.companyname.secondproject.IntroActivity">
+
+    <TextView
+        android:id="@+id/search_state_button"
+        android:text="Search state"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="#B4CDCD"
+        android:onClick="clickedSearchByState"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/filter_by_trump_support"
+        android:text="Filter by trump support"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="#ffff00"
+        android:layout_height="0dp"
+        android:onClick="clickedFilterByTrumpSupport"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/tbd"
+        android:text="TBD"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:background="#008000"
+        android:onClick="clickedTbd"
+        android:layout_weight="1"/>
+
+</LinearLayout>
