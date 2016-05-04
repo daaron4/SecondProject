@@ -18,7 +18,7 @@ public class UpdateActivity extends AppCompatActivity {
     public void clickedAdd(View view) {
         EditText userInputEditText = (EditText) findViewById(R.id.edit_text);
         String userInput = userInputEditText.getText().toString();
-        Cursor cursor = DataBaseHelper.getInstance(UpdateActivity.this).getTumpTableData();
+        Cursor cursor = DataBaseHelper.getInstance(UpdateActivity.this).getTrumpTableData();
 
         // checks if quote already exists:
         boolean addThisQuote = true;

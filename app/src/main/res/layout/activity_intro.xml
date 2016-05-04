@@ -4,12 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="4"
+    android:weightSum="5"
     tools:context="com.companyname.secondproject.IntroActivity">
 
     <TextView
         android:id="@+id/search_state_button"
-        android:text="Search for any state"
+        android:text="Search for any state or quote"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:textStyle="bold"
@@ -50,6 +50,17 @@
         android:layout_height="0dp"
         android:background="#B4CDCD"
         android:onClick="clickedUpdate"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/view_quotes_view"
+        android:text="View trump quotes"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:background="#00688B"
+        android:onClick="clickedViewQuotes"
         android:layout_weight="1"/>
 
 </LinearLayout>

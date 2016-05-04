@@ -595,7 +595,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
-    public Cursor getTumpTableData(){
+    public Cursor getTrumpTableData(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TRUMP_TABLE, // a. table
                 TRUMP_COL_NAMES, // b. column names

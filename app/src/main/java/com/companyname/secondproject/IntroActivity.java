@@ -32,4 +32,10 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent = new Intent(IntroActivity.this, UpdateActivity.class);
         startActivity(intent);
     }
+
+    public void clickedViewQuotes(View view) {
+        Intent intent = new Intent(IntroActivity.this, QuotesActivity.class);
+        startActivity(intent);
+    }
+
 }

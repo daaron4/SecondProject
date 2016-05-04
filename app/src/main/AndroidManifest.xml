@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".TrumpStatesActivity" />
         <activity android:name=".DensityActivity" />
-        <activity android:name=".UpdateActivity"></activity>
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".QuotesActivity"></activity>
     </application>
 
 </manifest>
