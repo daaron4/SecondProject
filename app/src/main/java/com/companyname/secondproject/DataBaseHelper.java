@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.Random;
+
 /**
  * Created by David on 4/27/2016.
  */
@@ -788,8 +790,12 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_TRUMP_QUOTE, quote);
-        // ToDo: here! need to fix this!
-        values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+        Random random = new Random();
+        // ToDo: can't forget to update this if ever more pictures get added:
+        int numberOfPictures = 10;
+        int randNum = random.nextInt(numberOfPictures) + 1;
+        String imageNameToAdd = "trump_img_" + randNum + ".png";
+        values.put(COL_TRUMP_IMG_NAME, imageNameToAdd);
 
         db.insert(TRUMP_TABLE, null, values);
     }

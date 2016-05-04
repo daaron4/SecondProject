@@ -20,6 +20,7 @@ public class UpdateActivity extends AppCompatActivity {
         String userInput = userInputEditText.getText().toString();
         Cursor cursor = DataBaseHelper.getInstance(UpdateActivity.this).getTumpTableData();
 
+        // checks if quote already exists:
         boolean addThisQuote = true;
         while (cursor.moveToNext()) {
             String currentQuote = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_QUOTE));
@@ -30,10 +31,16 @@ public class UpdateActivity extends AppCompatActivity {
         }
         cursor.close();
 
+        // adds quote if its not an empty string:
         if (addThisQuote) {
-            DataBaseHelper.getInstance(UpdateActivity.this).addQuote(userInput);
-            Toast.makeText(UpdateActivity.this, "Quote added", Toast.LENGTH_LONG).show();
-            userInputEditText.setText("");
+            if (!userInput.equals("")) {
+                DataBaseHelper.getInstance(UpdateActivity.this).addQuote(userInput);
+                Toast.makeText(UpdateActivity.this, "Quote added", Toast.LENGTH_LONG).show();
+                userInputEditText.setText("");
+            }
+            else {
+                Toast.makeText(UpdateActivity.this, "You can't add nothing man!", Toast.LENGTH_LONG).show();
+            }
         }
 
     }
