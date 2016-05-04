@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/search_state_button"
-        android:text="Search state"
+        android:text="Search for any state"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:textStyle="bold"
@@ -20,7 +20,7 @@
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/filter_by_trump_support"
-        android:text="Filter by trump support"
+        android:text="Show all states that voted for trump"
         android:layout_width="match_parent"
         android:textStyle="bold"
         android:textSize="20dp"
@@ -31,7 +31,7 @@
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/asshole_search"
-        android:text="Filter by asshole density"
+        android:text="Filter states by asshole density"
         android:layout_width="match_parent"
         android:textStyle="bold"
         android:textSize="20dp"
