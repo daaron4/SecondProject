@@ -10,5 +10,7 @@
         greater than the number you entered. To search by state size in square miles,
         enter a number greater than 100. The search will look for states that are smaller than
         that number</string>
+    <string name="ted">I won this state! I am crazy mother fucker too! Time to drop out!</string>
+    <string name="john">Hey guys! I won a state too!</string>
 
 </resources>

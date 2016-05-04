@@ -15,6 +15,7 @@ public class StateActivity extends AppCompatActivity {
     private ImageView trumpImageView;
     private TextView quote;
     private TextView info;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +23,18 @@ public class StateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_state);
 
         Intent intent = getIntent();
-        int id = intent.getIntExtra("id", -1);
+        id = intent.getIntExtra("id", -1);
         int votingStatus = DataBaseHelper.getInstance(StateActivity.this).getStateVotingStatusAtIndex(id + 1);
         // didn't vote for trump
         if (votingStatus == 0) {
-            layoutGoodState();
+            layoutTedState();
         }
         // voted for trump
         else if (votingStatus == 1) {
-            layoutBadState();
+            layoutTrumpState();
+        }
+        else if (votingStatus == 3) {
+            layoutJohnState();
         }
         // hasn't voted yet
         else {
@@ -39,15 +43,29 @@ public class StateActivity extends AppCompatActivity {
 
     }
 
-    private void layoutGoodState() {
+    private void layoutTedState() {
         info = (TextView) findViewById(R.id.info);
         info.setText(R.string.not_trump_state);
 
         quote = (TextView) findViewById(R.id.quote);
-        quote.setText("No trump quote needed");
+        quote.setText(R.string.ted);
+
+        trumpImageView = (ImageView) findViewById(R.id.trump_img);
+        trumpImageView.setImageResource(R.drawable.ted);
     }
 
-    private void layoutBadState() {
+    private void layoutJohnState() {
+        info = (TextView) findViewById(R.id.info);
+        info.setText(R.string.not_trump_state);
+
+        quote = (TextView) findViewById(R.id.quote);
+        quote.setText(R.string.john);
+
+        trumpImageView = (ImageView) findViewById(R.id.trump_img);
+        trumpImageView.setImageResource(R.drawable.john);
+    }
+
+    private void layoutTrumpState() {
         info = (TextView) findViewById(R.id.info);
         info.setText(R.string.trump_state);
 
@@ -78,5 +96,15 @@ public class StateActivity extends AppCompatActivity {
 
         quote = (TextView) findViewById(R.id.quote);
         quote.setText("No trump quote needed");
+
+        // creates state image:
+        Cursor cursor = DataBaseHelper.getInstance(StateActivity.this).getStateData();
+        cursor.moveToPosition(id);
+        String imgString = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME));
+        cursor.close();
+
+        trumpImageView = (ImageView) findViewById(R.id.trump_img);
+        trumpImageView.setImageResource(UtilityHelper.getDrawableValue(imgString));
+
     }
 }
