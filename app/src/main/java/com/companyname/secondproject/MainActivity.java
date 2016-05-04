@@ -2,8 +2,10 @@ package com.companyname.secondproject;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -18,19 +20,20 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private CursorAdapter cursorAdapter;
     private Cursor cursor;
     private ListView listView;
-    private ListView.OnItemClickListener itemClick;
+    private String query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createListener();
+        displayHelpfulPopUp();
         handleIntent(getIntent());
     }
 
@@ -43,73 +46,112 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
-
         // Associate searchable configuration with the SearchView
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
         return true;
     }
 
-    private void createListener() {
-        itemClick = new ListView.OnItemClickListener() {
+    private void displayHelpfulPopUp() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Instructions");
+        builder.setMessage(R.string.search_description);
+        // ToDo: Update icon here:
+        //builder.setIcon(R.drawable.dialog_icon);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByTrumpSupport();
-                cursor.moveToPosition(i);
-                int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
-                Intent intent = new Intent(MainActivity.this, StateActivity.class);
-                intent.putExtra("id", id - 1);
-                startActivity(intent);
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //does nothing
             }
-        };
+        });
+        builder.show();
     }
 
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            final String query = intent.getStringExtra(SearchManager.QUERY);
-            cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
-            listView = (ListView)findViewById(R.id.list_view);
-            if (cursorAdapter == null) {
-                cursorAdapter = new CursorAdapter(this, cursor, 0) {
-                    @Override
-                    public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-                        LayoutInflater layoutInflater = LayoutInflater.from(context);
-                        View view = layoutInflater.inflate(R.layout.list_item, viewGroup, false);
-                        return view;
-                    }
-
-                    @Override
-                    public void bindView(View view, Context context, Cursor cursor) {
-                        ImageView stateImg = (ImageView) view.findViewById(R.id.state_img);
-                        int resourceId = StateActivity.getDrawableValue(cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME)));
-                        stateImg.setImageResource(resourceId);
-
-                        TextView stateName = (TextView) view.findViewById(R.id.state_name);
-                        String stateNameText = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_STATE_NAME));
-                        stateName.setText(stateNameText);
-
-                    }
-                };
-
-                listView.setAdapter(cursorAdapter);
-            }
-            else {
-                cursorAdapter.swapCursor(cursor);
-            }
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
-                    cursor.moveToPosition(i);
-                    int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
-                    Intent intent = new Intent(MainActivity.this, StateActivity.class);
-                    intent.putExtra("id", id - 1);
-                    startActivity(intent);
+            query = intent.getStringExtra(SearchManager.QUERY);
+            int numberQuery;
+            try {
+                numberQuery = Integer.parseInt(query);
+                if (numberQuery >= 0 && numberQuery <= 100) {
+                    searchByAssholeDensity();
+                } else if (numberQuery > 100) {
+                    searchByStateSize();
+                } else {
+                    // tell user about incorrect input
+                    Toast.makeText(MainActivity.this, "Invalid input", Toast.LENGTH_LONG).show();
                 }
-            });
+            } catch (NumberFormatException e) {
+                searchByStateName();
+            }
+
         }
     }
+
+    private void searchByAssholeDensity() {
+        // ToDo: redo cursor and search method when ready
+        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        displayResults();
+    }
+
+    private void searchByStateSize() {
+        // ToDo: redo cursor and search method when ready
+        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        displayResults();
+    }
+
+    private void searchByStateName() {
+        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        displayResults();
+    }
+
+    private void displayResults() {
+        listView = (ListView) findViewById(R.id.list_view);
+        if (cursorAdapter == null) {
+            createAdapter();
+            listView.setAdapter(cursorAdapter);
+        } else {
+            cursorAdapter.swapCursor(cursor);
+        }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                respondToItemClick(i);
+            }
+        });
+    }
+
+    private void createAdapter() {
+        cursorAdapter = new CursorAdapter(this, cursor, 0) {
+            @Override
+            public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
+                LayoutInflater layoutInflater = LayoutInflater.from(context);
+                View view = layoutInflater.inflate(R.layout.list_item, viewGroup, false);
+                return view;
+            }
+
+            @Override
+            public void bindView(View view, Context context, Cursor cursor) {
+                ImageView stateImg = (ImageView) view.findViewById(R.id.state_img);
+                int resourceId = UtilityHelper.getDrawableValue(cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME)));
+                stateImg.setImageResource(resourceId);
+
+                TextView stateName = (TextView) view.findViewById(R.id.state_name);
+                String stateNameText = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_STATE_NAME));
+                stateName.setText(stateNameText);
+
+            }
+        };
+    }
+
+    private void respondToItemClick(int i) {
+        cursor.moveToPosition(i);
+        int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
+        Intent intent = new Intent(MainActivity.this, StateActivity.class);
+        intent.putExtra("id", id - 1);
+        startActivity(intent);
+    }
+
 }

@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">F-U trump!</string>
-    <string name="search">Search by state name</string>
+    <string name="search">Search</string>
 
     <string name="trump_state">Booooo, Republicans in this state voted for trump.... </string>
-    <string name="not_trump_state">Republicans in this state did not vote for trump</string>
+    <string name="not_trump_state">Republicans in this state voted for someone else...</string>
     <string name="no_vote_yet">Republicans have not voted in this state yet</string>
+    <string name="search_description">To search by state name enter text. To search by Asshole
+        density enter a number between 0 and 100. To search by a state by size in square miles,
+        enter a number greater than 100.</string>
 
 </resources>

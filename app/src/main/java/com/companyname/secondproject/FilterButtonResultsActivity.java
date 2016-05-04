@@ -42,7 +42,7 @@ public class FilterButtonResultsActivity extends AppCompatActivity {
                 @Override
                 public void bindView(View view, Context context, Cursor cursor) {
                     ImageView stateImg = (ImageView) view.findViewById(R.id.state_img);
-                    int resourceId = StateActivity.getDrawableValue(cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME)));
+                    int resourceId = UtilityHelper.getDrawableValue(cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_IMG_NAME)));
                     stateImg.setImageResource(resourceId);
 
                     TextView stateName = (TextView) view.findViewById(R.id.state_name);
