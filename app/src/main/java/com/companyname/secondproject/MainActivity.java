@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Instructions");
         builder.setMessage(R.string.search_description);
-        // ToDo: Update icon here:
-        //builder.setIcon(R.drawable.dialog_icon);
+        builder.setIcon(R.drawable.trump_icon);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

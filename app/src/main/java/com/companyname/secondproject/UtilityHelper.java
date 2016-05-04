@@ -109,7 +109,6 @@ public class UtilityHelper {
                 return R.drawable.state_wisconsin;
             case "state_wyoming.png":
                 return R.drawable.state_wyoming;
-            // ToDo: add more when ready
             case "trump_img_1.png":
                 return R.drawable.trump_img_1;
             case "trump_img_2.png":

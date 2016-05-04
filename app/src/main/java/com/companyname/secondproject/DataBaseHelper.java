@@ -788,7 +788,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_TRUMP_QUOTE, quote);
-        // ToDo: change this later:
+        // ToDo: here! need to fix this!
         values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
 
         db.insert(TRUMP_TABLE, null, values);
