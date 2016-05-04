@@ -27,4 +27,9 @@ public class IntroActivity extends AppCompatActivity {
         Intent intent = new Intent(IntroActivity.this, DensityActivity.class);
         startActivity(intent);
     }
+
+    public void clickedUpdate(View view) {
+        Intent intent = new Intent(IntroActivity.this, UpdateActivity.class);
+        startActivity(intent);
+    }
 }

@@ -33,6 +33,7 @@ public class StateActivity extends AppCompatActivity {
         else if (votingStatus == 1) {
             layoutTrumpState();
         }
+        // voted for other guys
         else if (votingStatus == 3) {
             layoutJohnState();
         }
@@ -69,20 +70,18 @@ public class StateActivity extends AppCompatActivity {
         info = (TextView) findViewById(R.id.info);
         info.setText(R.string.trump_state);
 
-        // HEY, MAKE SURE THAT THERE ARE THE SAME AMOUNT OF IMAGES AND QUOTES, AND THAT NONE ARE NULL FOR THIS LOGIC TO WORK!
-
         // gets size of trump table:
         int size = DataBaseHelper.getInstance(StateActivity.this).getTrumpTableSize();
         // makes random number inside the size of the table:
         Random random = new Random();
         int randNum = random.nextInt(size) + 1;
-        // gets quote at that index
+        // gets quote at that index:
         String quoteString = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
-        // displays quote
+        // displays quote:
         quote = (TextView) findViewById(R.id.quote);
         quote.setText("\"" + quoteString + "\"");
 
-        // same stuff for trump image:
+        // same logic for trump image:
         randNum = random.nextInt(size) + 1;
         String trumpImgString = DataBaseHelper.getInstance(StateActivity.this).getImagePathAtIndex(randNum);
 

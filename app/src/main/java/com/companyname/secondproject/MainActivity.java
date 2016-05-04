@@ -74,15 +74,20 @@ public class MainActivity extends AppCompatActivity {
             query = intent.getStringExtra(SearchManager.QUERY);
             try {
                 numberQuery = Integer.parseInt(query);
+                // requirements for searching by asshole density
                 if (numberQuery >= 0 && numberQuery <= 100) {
                     searchByAssholeDensity();
-                } else if (numberQuery > 100) {
+                }
+                // requirements for searching by state size
+                else if (numberQuery > 100) {
                     searchByStateSize();
-                } else {
+                }
+                else {
                     // tell user about incorrect input
                     Toast.makeText(MainActivity.this, "Invalid input", Toast.LENGTH_LONG).show();
                 }
             } catch (NumberFormatException e) {
+                // this will be the string the user put in
                 searchByStateName();
             }
         }

@@ -593,6 +593,19 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public Cursor getTumpTableData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                null, // c. selections
+                null, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
     public Cursor getDensityData(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(STATES_TABLE, // a. table
@@ -769,6 +782,16 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         cursor.close();
 
         return size;
+    }
+
+    public void addQuote(String quote) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_TRUMP_QUOTE, quote);
+        // ToDo: change this later:
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+
+        db.insert(TRUMP_TABLE, null, values);
     }
 
 }

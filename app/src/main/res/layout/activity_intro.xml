@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="3"
+    android:weightSum="4"
     tools:context="com.companyname.secondproject.IntroActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="center"
-        android:background="#B4CDCD"
+        android:background="#FF0000"
         android:onClick="clickedSearchByState"
         android:layout_weight="1"/>
     <TextView
@@ -39,6 +39,17 @@
         android:layout_height="0dp"
         android:background="#008000"
         android:onClick="clickedAssholeSearch"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/update_view"
+        android:text="Add new trump quote"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:background="#B4CDCD"
+        android:onClick="clickedUpdate"
         android:layout_weight="1"/>
 
 </LinearLayout>
