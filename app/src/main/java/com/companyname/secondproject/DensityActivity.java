@@ -18,12 +18,14 @@ import android.widget.TextView;
 
 public class DensityActivity extends AppCompatActivity {
 
+    private Cursor cursor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_density);
         ListView listView = (ListView) findViewById(R.id.density_list_view);
-        Cursor cursor = DataBaseHelper.getInstance(DensityActivity.this).getDensityData();
+        cursor = DataBaseHelper.getInstance(DensityActivity.this).getDensityData();
 
         CursorAdapter cursorAdapter = new CursorAdapter(this, cursor, 0) {
             @Override
@@ -47,6 +49,17 @@ public class DensityActivity extends AppCompatActivity {
         };
 
         listView.setAdapter(cursorAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                cursor.moveToPosition(i);
+                int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
+                Intent intent = new Intent(DensityActivity.this, StateActivity.class);
+                intent.putExtra("id", id - 1);
+                startActivity(intent);
+            }
+        });
 
     }
 
