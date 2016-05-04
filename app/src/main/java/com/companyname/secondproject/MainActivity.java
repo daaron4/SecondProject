@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Cursor cursor;
     private ListView listView;
     private String query;
+    private int numberQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             query = intent.getStringExtra(SearchManager.QUERY);
-            int numberQuery;
             try {
                 numberQuery = Integer.parseInt(query);
                 if (numberQuery >= 0 && numberQuery <= 100) {
@@ -90,14 +90,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void searchByAssholeDensity() {
-        // ToDo: redo cursor and search method when ready
-        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        cursor = DataBaseHelper.getInstance(MainActivity.this).filterByDensity(numberQuery);
         displayResults();
     }
 
     private void searchByStateSize() {
-        // ToDo: redo cursor and search method when ready
-        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        cursor = DataBaseHelper.getInstance(MainActivity.this).filterByStateSize(numberQuery);
         displayResults();
     }
 
@@ -141,6 +139,14 @@ public class MainActivity extends AppCompatActivity {
                 TextView stateName = (TextView) view.findViewById(R.id.state_name);
                 String stateNameText = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_STATE_NAME));
                 stateName.setText(stateNameText);
+
+                TextView stateDensityView = (TextView) view.findViewById(R.id.state_density_text);
+                float stateDensity = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_DENSITY));
+                stateDensityView.setText("Density: " + stateDensity);
+
+                TextView stateSizeView = (TextView) view.findViewById(R.id.state_size_text);
+                float stateSize = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_SQUARE_MILES));
+                stateSizeView.setText("Size: " + stateSize + " sq.mi.");
 
             }
         };

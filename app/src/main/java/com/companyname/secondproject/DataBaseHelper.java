@@ -606,6 +606,46 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public Cursor filterByDensity(int numberQuery){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //where clause:
+        String selections = "density > ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(numberQuery)
+        };
+
+        Cursor cursor = db.query(STATES_TABLE, // a. table
+                COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                COL_DENSITY + " DESC ", // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
+    public Cursor filterByStateSize(int numberQuery){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //where clause:
+        String selections = "square_miles < ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(numberQuery)
+        };
+
+        Cursor cursor = db.query(STATES_TABLE, // a. table
+                COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                COL_SQUARE_MILES + " DESC ", // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
     public Cursor searchStatesByName(String query){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(STATES_TABLE, // a. table
