@@ -247,11 +247,11 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Indiana");
-        values.put(COL_TRUMP_SUPPORTER, 2);
+        values.put(COL_TRUMP_SUPPORTER, 1);
         values.put(COL_IMG_NAME, "state_indiana.png");
         values.put(COL_SQUARE_MILES, 35867);
-        values.put(COL_TRUMP_VOTES, 0);
-        density = 0f / 35867f;
+        values.put(COL_TRUMP_VOTES, 587706);
+        density = 35867f / 587706f;
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
 

@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FilterButtonResultsActivity" />
+        <activity android:name=".TrumpStatesActivity" />
         <activity android:name=".DensityActivity"></activity>
     </application>
 
