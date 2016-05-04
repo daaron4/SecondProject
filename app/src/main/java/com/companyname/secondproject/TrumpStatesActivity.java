@@ -29,7 +29,7 @@ public class TrumpStatesActivity extends AppCompatActivity {
     }
 
     private void displayResults() {
-        listView = (ListView) findViewById(R.id.list_view);
+        listView = (ListView) findViewById(R.id.state_list_view);
         if (cursorAdapter == null) {
             createAdapter();
             listView.setAdapter(cursorAdapter);

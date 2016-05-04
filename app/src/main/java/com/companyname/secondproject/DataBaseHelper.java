@@ -674,6 +674,19 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
+    public Cursor searchQuotes(String query){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                COL_TRUMP_QUOTE + " LIKE ?", // c. selections
+                new String[]{"%" + query + "%"}, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        return cursor;
+    }
+
     public Cursor searchStatesByTrumpSupport(){
         SQLiteDatabase db = this.getReadableDatabase();
 

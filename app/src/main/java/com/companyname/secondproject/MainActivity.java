@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     private CursorAdapter cursorAdapter;
     private Cursor cursor;
-    private ListView listView;
+    private CursorAdapter cursorAdapter1;
+    private Cursor cursor1;
+    private ListView stateListView;
+    private ListView quoteListView;
     private String query;
     private int numberQuery;
 
@@ -86,10 +89,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Invalid input", Toast.LENGTH_LONG).show();
                 }
             } catch (NumberFormatException e) {
-                // this will be the string the user put in
+                // search by the string the user put in
                 searchByStateName();
+                searchQuotes();
             }
         }
+    }
+
+    private void searchByStateName() {
+        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+        displayResults();
+    }
+
+    private void searchQuotes() {
+        cursor1 = DataBaseHelper.getInstance(MainActivity.this).searchQuotes(query);
+        displayResultsNew();
     }
 
     private void searchByAssholeDensity() {
@@ -102,21 +116,45 @@ public class MainActivity extends AppCompatActivity {
         displayResults();
     }
 
-    private void searchByStateName() {
-        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
-        displayResults();
+    private void displayResultsNew() {
+        quoteListView = (ListView) findViewById(R.id.quote_list_view);
+        if (cursorAdapter1 == null) {
+            createAdapterNew();
+            quoteListView.setAdapter(cursorAdapter1);
+        } else {
+            cursorAdapter1.swapCursor(cursor1);
+        }
+    }
+
+    private void createAdapterNew() {
+        cursorAdapter1 = new CursorAdapter(this, cursor1, 0) {
+            @Override
+            public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
+                LayoutInflater layoutInflater = LayoutInflater.from(context);
+                View view = layoutInflater.inflate(R.layout.super_simple, viewGroup, false);
+                return view;
+            }
+
+            @Override
+            public void bindView(View view, Context context, Cursor cursor) {
+                TextView stateName = (TextView) view.findViewById(R.id.simple_tv);
+                String stateNameText = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_QUOTE));
+                stateName.setText(stateNameText);
+            }
+        };
     }
 
     private void displayResults() {
-        listView = (ListView) findViewById(R.id.list_view);
+        // ToDo: figure out how to clear the other cursor
+        stateListView = (ListView) findViewById(R.id.state_list_view);
         if (cursorAdapter == null) {
             createAdapter();
-            listView.setAdapter(cursorAdapter);
+            stateListView.setAdapter(cursorAdapter);
         } else {
             cursorAdapter.swapCursor(cursor);
         }
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        stateListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 respondToItemClick(i);
