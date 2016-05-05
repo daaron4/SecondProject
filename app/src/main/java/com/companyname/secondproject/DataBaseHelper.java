@@ -839,7 +839,26 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         };
 
         db.update(TRUMP_TABLE, values, selection, selectionArgs);
+    }
 
+    public Cursor getFavoriteQuotes(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //where clause:
+        String selections = "favorite = ?";
+
+        String[] selectionArgs = new String[] {
+                String.valueOf(1)
+        };
+
+        Cursor cursor = db.query(TRUMP_TABLE, // a. table
+                TRUMP_COL_NAMES, // b. column names
+                selections, // c. selections
+                selectionArgs, // d. selections args
+                null, // e. group by
+                null, // f. having
+                null, // g. order by
+                null); // h. limit
+        return cursor;
     }
 
 }

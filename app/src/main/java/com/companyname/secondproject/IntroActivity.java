@@ -38,4 +38,9 @@ public class IntroActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickedViewFavorites(View view) {
+        Intent intent = new Intent(IntroActivity.this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
 }

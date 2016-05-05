@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="5"
+    android:weightSum="6"
     tools:context="com.companyname.secondproject.IntroActivity">
 
     <TextView
@@ -61,6 +61,17 @@
         android:layout_height="0dp"
         android:background="#00688B"
         android:onClick="clickedViewQuotes"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/view_favorites_view"
+        android:text="View favorites"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:background="#C0C0C0"
+        android:onClick="clickedViewFavorites"
         android:layout_weight="1"/>
 
 </LinearLayout>

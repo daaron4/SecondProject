@@ -40,9 +40,9 @@ public class QuotesActivity extends AppCompatActivity {
 
             @Override
             public void bindView(View view, Context context, Cursor cursor) {
-                TextView stateName = (TextView) view.findViewById(R.id.simple_tv);
-                String stateNameText = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_QUOTE));
-                stateName.setText(stateNameText);
+                TextView quoteView = (TextView) view.findViewById(R.id.simple_tv);
+                String quote = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_QUOTE));
+                quoteView.setText(quote);
             }
         };
 
