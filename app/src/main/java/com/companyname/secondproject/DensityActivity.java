@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class DensityActivity extends AppCompatActivity {
 
     private Cursor cursor;
@@ -42,8 +44,12 @@ public class DensityActivity extends AppCompatActivity {
                 stateName.setText(stateNameText);
 
                 TextView stateDensityView = (TextView) view.findViewById(R.id.state_density);
-                float stateDensity = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_DENSITY));
-                stateDensityView.setText("" + stateDensity);
+                float stateDensityFloat = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_DENSITY));
+                DecimalFormat decimalFormat = new DecimalFormat();
+                decimalFormat.setMaximumFractionDigits(2);
+                String stateDensityString = decimalFormat.format(stateDensityFloat);
+
+                stateDensityView.setText("" + stateDensityString + "%");
 
             }
         };
