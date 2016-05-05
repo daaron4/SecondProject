@@ -224,7 +224,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
-        
+
     }
 
     private void loadStatesTable(SQLiteDatabase db) {
@@ -944,6 +944,20 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 null, // g. order by
                 null); // h. limit
         return cursor;
+    }
+
+    public void removeQuoteFromFavorites(int index){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_FAVORITE, 0);
+
+        String selection = "_id = ?";
+
+        String[] selectionArgs = new String[]{
+                String.valueOf(index)
+        };
+
+        db.update(TRUMP_TABLE, values, selection, selectionArgs);
     }
 
 }
