@@ -98,17 +98,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "Look at that face! Would anyone vote for that? Can you imagine that, the face of our next president?");
+        values.put(COL_TRUMP_QUOTE, "Look at that face! (former Republican presidential candidate Carly Fiorina) Would anyone vote for that? Can you imagine that, the face of our next president?");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "You could see there was blood coming out of her eyes. Blood coming out of her… wherever");
+        values.put(COL_TRUMP_QUOTE, "You could see there was blood coming out of her eyes. Blood coming out of her… wherever (Megyn Kelly)");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
-        values.put(COL_TRUMP_QUOTE, "He’s not a war hero. He’s a war hero because he was captured. I like people who weren’t captured");
+        values.put(COL_TRUMP_QUOTE, "He’s not a war hero.(John McCain) He’s a war hero because he was captured. I like people who weren’t captured");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
@@ -139,6 +139,92 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
+        values.put(COL_TRUMP_QUOTE, "I will build a great wall – and nobody builds walls better than me, believe me – and " +
+                "I’ll build them very inexpensively. I will build a great, great wall on our Southern border, and I will make " +
+                "Mexico pay for that wall. Mark my words.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "I have never seen a thin person drinking Diet Coke.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_2.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "26,000 unreported sexual assaults in the military — only 238 convictions. What did these geniuses expect when they put men & women together?");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "The most difficult aspect of the prenuptial agreement is informing your future wife (or husband): " +
+                "I love you very much, but just in case things don’t work out, this is what you will get in the divorce. There are " +
+                "basically three types of women and reactions. One is the good woman who very much loves her future husband, solely " +
+                "for himself, but refuses to sign the agreement on principle. I fully understand this, but the man should take a pass " +
+                "anyway and find someone else. The other is the calculating woman who refuses to sign the prenuptial agreement because " +
+                "she is expecting to take advantage of the poor, unsuspecting sucker she’s got in her grasp. There is also the woman who" +
+                " will openly and quickly sign a prenuptial agreement in order to make a quick hit and take the money given to her");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "[Angelina Jolie’s] been with so many guys she makes me look like a baby... And, I just don’t even find her attractive");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Women have one of the great acts of all time. The smart ones act very feminine and needy, but inside they " +
+                "are real killers. The person who came up with the expression ‘the weaker sex’ was either very naive or had to be kidding. " +
+                "I have seen women manipulate men with just a twitch of their eye — or perhaps another body part");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_6.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Cher is somewhat of a loser. She's lonely. She's unhappy. She's very miserable");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_7.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Women find his power almost as much of a turn-on as his money");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_8.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "I think the only difference between me and the other candidates " +
+                "is that I’m more honest and my women are more beautiful");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_9.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "My IQ is one of the highest — and you all know it! Please don't feel so stupid or insecure; it's not your fault");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_10.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "(about his daughter) Yeah, she's really something, and what a beauty, that one. If I weren't happily married and, ya know, her father");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "(not true) The line of ‘Make America Great Again,’ the phrase, that was mine, I came up with it about a year ago, and I kept using it, and everybody’s using it, they are all loving it. I don’t know; I guess I should copyright it, maybe I have copyrighted it.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_2.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "If Ivanka weren't my daughter, perhaps I'd be dating her");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Women are far stronger than men. Their sex drive makes us look like babies. Some women try to portray themselves as being of the weaker sex, but don’t believe it for a minute.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+
+        values.put(COL_TRUMP_QUOTE, "Women are far worse than men, far more aggressive, and boy, can they be smart. Let’s give credit where credit is due, and let’s salute women for their tremendous power, which most men are afraid to admit they have.");
+        values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
+        values.put(COL_FAVORITE, 0);
+        db.insert(TRUMP_TABLE, null, values);
+        
     }
 
     private void loadStatesTable(SQLiteDatabase db) {
@@ -827,7 +913,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     }
 
     public void favoriteQuoteAtIndex(int index) {
-        // ToDo: make this work:
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_FAVORITE, 1);
