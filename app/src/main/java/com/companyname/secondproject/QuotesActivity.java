@@ -1,8 +1,10 @@
 package com.companyname.secondproject;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuotesActivity extends AppCompatActivity {
 
@@ -48,12 +51,25 @@ public class QuotesActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // ToDo: change this stuff:
                 cursor.moveToPosition(i);
-                int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
-                Intent intent = new Intent(QuotesActivity.this, StateActivity.class);
-                intent.putExtra("id", id - 1);
-                startActivity(intent);
+                final int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
+                AlertDialog.Builder builder = new AlertDialog.Builder(QuotesActivity.this);
+                builder.setTitle(R.string.favorite);
+                builder.setIcon(R.drawable.trump_icon);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        DataBaseHelper.getInstance(QuotesActivity.this).favoriteQuoteAtIndex(id);
+                        Toast.makeText(QuotesActivity.this, "Quote added to favorites!", Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(QuotesActivity.this, "Fine then, don't add that quote.", Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.show();
             }
         });
 

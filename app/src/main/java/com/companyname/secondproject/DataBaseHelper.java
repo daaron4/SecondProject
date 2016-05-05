@@ -45,15 +45,17 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public static final String COL_TRUMP_ID = "_id";
     public static final String COL_TRUMP_QUOTE = "trump_quote";
     public static final String COL_TRUMP_IMG_NAME = "trump_img_name";
+    public static final String COL_FAVORITE = "favorite";
 
-    public static final String[] TRUMP_COL_NAMES = {COL_TRUMP_ID, COL_TRUMP_QUOTE, COL_TRUMP_IMG_NAME};
+    public static final String[] TRUMP_COL_NAMES = {COL_TRUMP_ID, COL_TRUMP_QUOTE, COL_TRUMP_IMG_NAME, COL_FAVORITE};
 
     private static final String CREATE_TRUMP_TABLE =
             "CREATE TABLE " + TRUMP_TABLE +
                     "(" +
                     COL_TRUMP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_TRUMP_QUOTE + " TEXT, " +
-                    COL_TRUMP_IMG_NAME + " TEXT)";
+                    COL_TRUMP_IMG_NAME + " TEXT, " +
+                    COL_FAVORITE + " INTEGER)";
 
     private static DataBaseHelper instance;
 
@@ -87,44 +89,54 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
         values.put(COL_TRUMP_QUOTE, "We can't continue to allow China to rape our country");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_1.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "Donald J. Trump is calling for a total and complete shutdown of Muslims entering the " +
                 "United States until our country's representatives can figure out what is going on");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_2.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "Look at that face! Would anyone vote for that? Can you imagine that, the face of our next president?");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_3.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "You could see there was blood coming out of her eyes. Blood coming out of her… wherever");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_4.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "He’s not a war hero. He’s a war hero because he was captured. I like people who weren’t captured");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_5.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "I have a great relationship with the Mexican people.");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_6.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "I actually don't have a bad hairline.");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_7.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "Because I was down there and I watched our police and our firemen down at 7/11, " +
                 "down at the World Trade Center right after it came down. And I saw the greatest people I've ever seen in action.");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_8.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "You know, it doesn't really matter what [the media] write as long as you've got a young and beautiful piece of ass.");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_9.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
         values.put(COL_TRUMP_QUOTE, "All of the women on 'The Apprentice' flirted with me — consciously or unconsciously. That’s to be expected.");
         values.put(COL_TRUMP_IMG_NAME, "trump_img_10.png");
+        values.put(COL_FAVORITE, 0);
         db.insert(TRUMP_TABLE, null, values);
 
     }
@@ -809,8 +821,25 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         int randNum = random.nextInt(numberOfPictures) + 1;
         String imageNameToAdd = "trump_img_" + randNum + ".png";
         values.put(COL_TRUMP_IMG_NAME, imageNameToAdd);
+        values.put(COL_FAVORITE, 0);
 
         db.insert(TRUMP_TABLE, null, values);
+    }
+
+    public void favoriteQuoteAtIndex(int index) {
+        // ToDo: make this work:
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_FAVORITE, 1);
+
+        String selection = "_id = ?";
+
+        String[] selectionArgs = new String[]{
+                String.valueOf(index)
+        };
+
+        db.update(TRUMP_TABLE, values, selection, selectionArgs);
+
     }
 
 }

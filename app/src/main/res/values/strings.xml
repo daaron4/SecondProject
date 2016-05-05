@@ -5,12 +5,14 @@
     <string name="trump_state">Booooo, Republicans in this state voted for trump.... </string>
     <string name="not_trump_state">Republicans in this state voted for someone else...</string>
     <string name="no_vote_yet">Republicans have not voted in this state yet</string>
-    <string name="search_description">To search by state name enter text. To search by Asshole
+    <string name="search_description">I do not care about your user experience. This is how this search works:
+        Enter text to search for states or quotes. To filter by Asshole
         density enter a number between 0 and 100. The search will look for states with a density
         greater than the number you entered. To search by state size in square miles,
         enter a number greater than 100. The search will look for states that are smaller than
-        that number</string>
+        that number.</string>
     <string name="ted">I won this state! I am crazy mother fucker too! Time to drop out!</string>
     <string name="john">Hey guys! I won a state too!</string>
+    <string name="favorite">Favorite this quote!</string>
 
 </resources>

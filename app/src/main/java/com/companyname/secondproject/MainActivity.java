@@ -18,7 +18,6 @@ import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayHelpfulPopUp() {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Instructions");
         builder.setMessage(R.string.search_description);
         builder.setIcon(R.drawable.trump_icon);
@@ -78,42 +77,26 @@ public class MainActivity extends AppCompatActivity {
                 numberQuery = Integer.parseInt(query);
                 // requirements for searching by asshole density
                 if (numberQuery >= 0 && numberQuery <= 100) {
-                    searchByAssholeDensity();
+                    cursor = DataBaseHelper.getInstance(MainActivity.this).filterByDensity(numberQuery);
+                    displayResults();
                 }
                 // requirements for searching by state size
                 else if (numberQuery > 100) {
-                    searchByStateSize();
+                    cursor = DataBaseHelper.getInstance(MainActivity.this).filterByStateSize(numberQuery);
+                    displayResults();
                 }
                 else {
                     // tell user about incorrect input
                     Toast.makeText(MainActivity.this, "Invalid input", Toast.LENGTH_LONG).show();
                 }
             } catch (NumberFormatException e) {
-                // search by the string the user put in
-                searchByStateName();
-                searchQuotes();
+                // search by the string the user put in, first is state, second is quote
+                cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
+                displayResults();
+                cursor1 = DataBaseHelper.getInstance(MainActivity.this).searchQuotes(query);
+                displayResultsNew();
             }
         }
-    }
-
-    private void searchByStateName() {
-        cursor = DataBaseHelper.getInstance(MainActivity.this).searchStatesByName(query);
-        displayResults();
-    }
-
-    private void searchQuotes() {
-        cursor1 = DataBaseHelper.getInstance(MainActivity.this).searchQuotes(query);
-        displayResultsNew();
-    }
-
-    private void searchByAssholeDensity() {
-        cursor = DataBaseHelper.getInstance(MainActivity.this).filterByDensity(numberQuery);
-        displayResults();
-    }
-
-    private void searchByStateSize() {
-        cursor = DataBaseHelper.getInstance(MainActivity.this).filterByStateSize(numberQuery);
-        displayResults();
     }
 
     private void displayResultsNew() {
@@ -124,6 +107,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             cursorAdapter1.swapCursor(cursor1);
         }
+
+        quoteListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                respondToQuoteItemClick(i);
+            }
+        });
     }
 
     private void createAdapterNew() {
@@ -199,6 +189,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, StateActivity.class);
         intent.putExtra("id", id - 1);
         startActivity(intent);
+    }
+
+    private void respondToQuoteItemClick(int i) {
+        cursor1.moveToPosition(i);
+        final int id = cursor1.getInt(cursor1.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.favorite);
+        builder.setIcon(R.drawable.trump_icon);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DataBaseHelper.getInstance(MainActivity.this).favoriteQuoteAtIndex(id);
+                Toast.makeText(MainActivity.this, "Quote added to favorites!", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MainActivity.this, "Fine then, don't add that quote.", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.show();
     }
 
 }
