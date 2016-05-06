@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 public class QuotesActivity extends AppCompatActivity {
 
+    // Displays all trump quotes for the user to see
+
     private Cursor cursor;
 
     @Override
@@ -49,6 +51,7 @@ public class QuotesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 cursor.moveToPosition(i);
                 final int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
+                // Pop up that allows user to add this quote to their favorites
                 AlertDialog.Builder builder = new AlertDialog.Builder(QuotesActivity.this);
                 builder.setTitle(R.string.favorite);
                 builder.setIcon(R.drawable.trump_icon);

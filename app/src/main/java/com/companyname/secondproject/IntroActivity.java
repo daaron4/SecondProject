@@ -7,6 +7,8 @@ import android.view.View;
 
 public class IntroActivity extends AppCompatActivity {
 
+    // Welcome activity that allows user to explore app
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

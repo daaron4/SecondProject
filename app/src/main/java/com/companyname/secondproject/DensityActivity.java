@@ -20,6 +20,8 @@ import java.text.DecimalFormat;
 
 public class DensityActivity extends AppCompatActivity {
 
+    // This activity shows all states filtered by their densities
+
     private Cursor cursor;
 
     @Override
@@ -59,6 +61,7 @@ public class DensityActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // Display detail view for any state
                 cursor.moveToPosition(i);
                 int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
                 Intent intent = new Intent(DensityActivity.this, StateActivity.class);

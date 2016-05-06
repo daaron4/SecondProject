@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
 
+    // This activity allows the user to add new quotes to the database
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,7 @@ public class UpdateActivity extends AppCompatActivity {
         String userInput = userInputEditText.getText().toString();
         Cursor cursor = DataBaseHelper.getInstance(UpdateActivity.this).getTrumpTableData();
 
-        // checks if quote already exists:
+        // Checks if quote already exists:
         boolean addThisQuote = true;
         while (cursor.moveToNext()) {
             String currentQuote = cursor.getString(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_QUOTE));
@@ -31,7 +33,7 @@ public class UpdateActivity extends AppCompatActivity {
         }
         cursor.close();
 
-        // adds quote if its not an empty string:
+        // Adds quote if its not an empty string:
         if (addThisQuote) {
             if (!userInput.equals("")) {
                 DataBaseHelper.getInstance(UpdateActivity.this).addQuote(userInput);

@@ -13,6 +13,11 @@ import java.util.Random;
  */
 public class DataBaseHelper extends SQLiteOpenHelper{
 
+    // This is the database helper class
+    // There are two tables in this database, one that contains trump data,
+    // the other contains state data
+
+    // All column names and such:
     public static final String DATABASE_NAME = "States.db";
     public static final int DATABASE_VERSION = 1;
 
@@ -679,6 +684,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(COL_DENSITY, density);
         db.insert(STATES_TABLE, null, values);
     }
+
+    // All methods are self explanitory:
 
     public Cursor getStateData(){
         SQLiteDatabase db = this.getReadableDatabase();

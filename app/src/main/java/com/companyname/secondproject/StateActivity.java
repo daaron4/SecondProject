@@ -11,6 +11,8 @@ import java.util.Random;
 
 public class StateActivity extends AppCompatActivity {
 
+    // This activity displays the detail view for any state
+
     private ImageView trumpImageView;
     private TextView quote;
     private TextView info;

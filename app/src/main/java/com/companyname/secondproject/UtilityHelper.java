@@ -5,10 +5,10 @@ package com.companyname.secondproject;
  */
 public class UtilityHelper {
 
-    // This is a helper class that gets my resource ID for any string given to it:
+    // This is a helper class with only one method that gets the resource ID for any string given to it:
 
-    public static int getDrawableValue(String image){
-        switch(image){
+    public static int getDrawableValue(String imageName){
+        switch(imageName){
             case "state_alabama.png":
                 return R.drawable.state_alabama;
             case "state_alaska.png":

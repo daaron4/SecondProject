@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 public class FavoritesActivity extends AppCompatActivity {
 
+    // This activity displays all of the users favorite quotes
+
     private Cursor cursor;
 
     @Override
@@ -50,6 +52,7 @@ public class FavoritesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 cursor.moveToPosition(i);
                 final int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
+                // Pop up that allows the user to remove quotes from their favorites
                 AlertDialog.Builder builder = new AlertDialog.Builder(FavoritesActivity.this);
                 builder.setTitle(R.string.delete);
                 builder.setIcon(R.drawable.trump_icon);

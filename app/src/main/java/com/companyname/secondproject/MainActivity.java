@@ -25,6 +25,9 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // MainActivity is a deceptive name for this class. This class allows the user
+    // to search for quotes and states, and displays the results in two lists
+
     private CursorAdapter cursorAdapter;
     private Cursor cursor;
     private CursorAdapter cursorAdapter1;

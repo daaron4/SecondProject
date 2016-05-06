@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 public class TrumpStatesActivity extends AppCompatActivity {
 
+    // This activity displays all states the trump won
+
     private CursorAdapter cursorAdapter;
     private Cursor cursor;
     private ListView listView;
@@ -76,6 +78,7 @@ public class TrumpStatesActivity extends AppCompatActivity {
         };
     }
 
+    // Takes the user to that state's detail page
     private void respondToItemClick(int i) {
         cursor.moveToPosition(i);
         int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_STATE_ID));
