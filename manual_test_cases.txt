@@ -1,0 +1,23 @@
+Manual Test Cases:
+1)	Verify that clicking on the ‘Search for any state or quote’ button takes the user to a search view page
+2)	Verify that searching for a number between 0 and 100 returns states filtered by asshole density
+3)	Verify that searching for a number greater than 100 returns states filtered by state land size
+4)	Verify that searching for text returns a list of states filtered by that text, as well as a list of quotes filtered by that text
+5)	Verify that clicking on a state takes the user to that state’s detail view page
+6)	Verify that the detail view page has an image of trump, and a trump quote if he won that state
+7)	Verify that the detail view page has an image of the state and a description saying that nobody voted in that state if nobody has voted yet
+8)	Verify that the detail view page has an image of ted if trump lost that state and that state is not Ohio
+9)	Verify that the detail view page for Ohio has an image of john 
+10)	Verify that clicking on a quote displays a pop up that allows the user to add a quote to their favorites
+11)	Verify that clicking the ‘Show all states that voted for trump’ button takes the user to a list of all states that voted for trump
+12)	Verify that clicking on a state takes the user to that state’s detail view page
+13)	Verify that clicking on the ‘Filter states by asshole density’ button takes the user to a list full of all states filtered by that metric, sorted from largest density to smallest
+14)	Verify that clicking on a state takes the user to that state’s detail view page
+15)	Verify that clicking on the ‘Add new trump quote’ button, takes the user to a add quote page
+16)	Verify that the user cannot add a quote that is empty
+17)	Verify that the user can add a new quote by entering text and clicking ‘Add this quote’
+18)	Verify that when the user clicks ‘view trump quotes’ they are taken to a list of all trump quotes in the database
+19)	Verify that clicking on a quote displays a pop up that allows the user to add a quote to their favorites
+20)	Verify that the user is taken to a list of their favorite quotes when the click on ‘View favorites
+21)	Verify that when the user clicks on a quote they are presented with an option to delete it
+22)	Verify that when the user chooses to delete a quote from their favorites, that it is removed from their favorites
