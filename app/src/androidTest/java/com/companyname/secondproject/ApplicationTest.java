@@ -25,8 +25,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     @SmallTest
     public void test() {
         int size = DataBaseHelper.getInstance(context).getStateData().getCount();
-        int size2 = DataBaseHelper.getInstance(context).getTrumpTableSize();
-        assertEquals(26, size2);
         assertEquals(50, size);
     }
 
