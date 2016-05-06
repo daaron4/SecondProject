@@ -613,7 +613,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         db.insert(STATES_TABLE, null, values);
 
         values.put(COL_STATE_NAME, "Texas");
-        values.put(COL_TRUMP_SUPPORTER, 1);
+        values.put(COL_TRUMP_SUPPORTER, 2);
         values.put(COL_IMG_NAME, "state_texas.png");
         values.put(COL_SQUARE_MILES, 261797);
         values.put(COL_TRUMP_VOTES, 757618);
