@@ -17,22 +17,12 @@
         android:weightSum="2"
         android:orientation="vertical">
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="States:"/>-->
-
         <ListView
             android:id="@+id/state_list_view"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content">
         </ListView>
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Quotes:"/>-->
 
         <ListView
             android:id="@+id/quote_list_view"

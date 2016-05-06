@@ -13,6 +13,7 @@
     <TextView
         android:text="States that voted for trump:"
         android:textSize="20dp"
+        android:textColor="@color/button_material_light"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

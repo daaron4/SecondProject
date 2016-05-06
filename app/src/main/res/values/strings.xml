@@ -14,6 +14,6 @@
     <string name="ted">I won this state! I am crazy mother fucker too! Time to drop out!</string>
     <string name="john">Hey guys! I won a state too!</string>
     <string name="favorite">Favorite this quote!</string>
-    <string name="delete">Remove this quote from your favorites.</string>
+    <string name="delete">Remove from favorites</string>
 
 </resources>

@@ -53,7 +53,7 @@ public class FavoritesActivity extends AppCompatActivity {
                 cursor.moveToPosition(i);
                 final int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
                 // Pop up that allows the user to remove quotes from their favorites
-                AlertDialog.Builder builder = new AlertDialog.Builder(FavoritesActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(FavoritesActivity.this, R.style.AlertDialogCustom);
                 builder.setTitle(R.string.delete);
                 builder.setIcon(R.drawable.trump_icon);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {

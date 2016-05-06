@@ -52,7 +52,7 @@ public class QuotesActivity extends AppCompatActivity {
                 cursor.moveToPosition(i);
                 final int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper.COL_TRUMP_ID));
                 // Pop up that allows user to add this quote to their favorites
-                AlertDialog.Builder builder = new AlertDialog.Builder(QuotesActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(QuotesActivity.this, R.style.AlertDialogCustom);
                 builder.setTitle(R.string.favorite);
                 builder.setIcon(R.drawable.trump_icon);
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {

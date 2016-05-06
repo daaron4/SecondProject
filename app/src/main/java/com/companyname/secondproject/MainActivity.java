@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayHelpfulPopUp() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogCustom);
         builder.setTitle("Instructions");
         builder.setMessage(R.string.search_description);
         builder.setIcon(R.drawable.trump_icon);
