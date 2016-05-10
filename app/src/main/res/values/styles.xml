@@ -6,8 +6,8 @@
         <item name="colorPrimary">@android:color/holo_red_dark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/material_grey_600</item>
-        <item name="android:colorBackground">@color/material_blue_grey_950</item>
-        <item name="android:textColorPrimary">@color/button_material_dark</item>
+        <item name="android:colorBackground">@color/material_grey_900</item>
+        <item name="android:textColorPrimary">@color/abc_primary_text_disable_only_material_dark</item>
     </style>
 
     <style name="AlertDialogCustom" parent="@android:style/Theme.Dialog">

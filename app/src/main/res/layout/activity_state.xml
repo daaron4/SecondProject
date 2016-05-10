@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/button_material_light"
+            android:gravity="center"
+            android:textColor="#0198E1"
             android:textSize="20sp"
             android:textStyle="bold"
             android:text="info text here" />
@@ -41,7 +42,8 @@
             android:id="@+id/quote"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/button_material_light"
+            android:textColor="#0198E1"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="trump quote here" />

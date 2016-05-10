@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class TrumpStatesActivity extends AppCompatActivity {
 
     // This activity displays all states the trump won
@@ -67,8 +69,12 @@ public class TrumpStatesActivity extends AppCompatActivity {
                 stateName.setText(stateNameText);
 
                 TextView stateDensityView = (TextView) view.findViewById(R.id.state_density_text);
-                float stateDensity = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_DENSITY));
-                stateDensityView.setText("Density: " + stateDensity);
+                float stateDensityFloat = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_DENSITY));
+                DecimalFormat decimalFormat = new DecimalFormat();
+                decimalFormat.setMaximumFractionDigits(2);
+                String stateDensityString = decimalFormat.format(stateDensityFloat);
+
+                stateDensityView.setText("Density: " + stateDensityString + "%");
 
                 TextView stateSizeView = (TextView) view.findViewById(R.id.state_size_text);
                 float stateSize = cursor.getFloat(cursor.getColumnIndex(DataBaseHelper.COL_SQUARE_MILES));
