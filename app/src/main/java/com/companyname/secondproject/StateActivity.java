@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -80,7 +82,10 @@ public class StateActivity extends AppCompatActivity {
         String quoteString = DataBaseHelper.getInstance(StateActivity.this).getTrumpQuoteAtIndex(randNum);
         // displays quote:
         quote = (TextView) findViewById(R.id.quote);
-        quote.setText("\"" + quoteString + "\"");
+        quote.setText(quoteString);
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.complex_animation);
+        quote.startAnimation(animation);
 
         // same logic for trump image:
         randNum = random.nextInt(size) + 1;

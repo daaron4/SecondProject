@@ -129,6 +129,26 @@ public class UtilityHelper {
                 return R.drawable.trump_img_9;
             case "trump_img_10.png":
                 return R.drawable.trump_img_10;
+            case "trump_img_11.png":
+                return R.drawable.trump_img_11;
+            case "trump_img_12.png":
+                return R.drawable.trump_img_12;
+            case "trump_img_13.png":
+                return R.drawable.trump_img_13;
+            case "trump_img_14.png":
+                return R.drawable.trump_img_14;
+            case "trump_img_15.png":
+                return R.drawable.trump_img_15;
+            case "trump_img_16.png":
+                return R.drawable.trump_img_16;
+            case "trump_img_17.png":
+                return R.drawable.trump_img_17;
+            case "trump_img_18.png":
+                return R.drawable.trump_img_18;
+            case "trump_img_19.png":
+                return R.drawable.trump_img_19;
+            case "trump_img_20.png":
+                return R.drawable.trump_img_20;
             default:
                 return 0;
         }
